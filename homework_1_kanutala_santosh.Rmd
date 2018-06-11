@@ -1,0 +1,61 @@
+---
+title: "COMPSCIX 415.2 Homework 1"
+author: "Santosh Kanutala"
+date: "6/7/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+My Github repository for my assignments can be found at this URL : https://github.com/santumagic/compscix-415-2assignments.git
+
+
+```{r load_packages, warning=FALSE, message=FALSE}
+library(mdsr)
+library(tidyverse)
+```
+
+
+```{r}
+data("WorldCities")
+```
+
+
+```{r}
+# QUESTION 1 :
+
+glimpse(WorldCities)
+```
+
+```{r warning=FALSE, message=FALSE, error=FALSE}
+## In the above WorldCities dataset there are 23,018 observations and 10 Variables. 
+## Below are some variable names.
+```
+code, name, lattitude, longitude, country, countryRegion, population, regionCode, region, date
+
+
+```{r}
+## Extract parts of the data
+
+WorldCities <- head(WorldCities, 200) # Top 200 rows
+country_col <- WorldCities$country # Pulling the country column by assigning it to country_col
+unique(country_col) # Displaying the unique values from the field country_col
+
+```
+
+
+```{r}
+# QUESTION 2 :
+
+region_col <- WorldCities$region # Pulling the region column by assigning it to region_col
+unique(region_col) # Displaying the unique values from the field region
+```
+
+
+
+
+
+
+
+
