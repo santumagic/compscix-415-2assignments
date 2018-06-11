@@ -2,7 +2,9 @@
 title: "COMPSCIX 415.2 Homework 1"
 author: "Santosh Kanutala"
 date: "6/7/2018"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -53,6 +55,30 @@ unique(region_col) # Displaying the unique values from the field region
 ```
 
 
+```{r}
+# QUESTION 3 : 
+
+country_col <- WorldCities %>% select(country) %>% unique()
+country_col %>% unique()
+```
+
+```{r}
+
+
+## VISUALIZATIONS :
+
+WorldCities %>% ggplot(aes(x = population)) + geom_histogram()
+
+WorldCities %>% ggplot(aes(x = population)) + geom_histogram() + xlab('city population')
+```
+
+
+```{r}
+# QUESTION 4 : 
+
+WorldCities %>% ggplot(aes(x = population)) + geom_histogram() + xlab('city population') + 
+ylab('count of people') + ggtitle('my title') + theme_bw()
+``` 
 
 
 
