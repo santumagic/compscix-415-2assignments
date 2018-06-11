@@ -3,6 +3,7 @@ title: "COMPSCIX 415.2 Homework 1"
 author: "Santosh Kanutala"
 date: "6/7/2018"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -77,7 +78,7 @@ WorldCities %>% ggplot(aes(x = population)) + geom_histogram() + xlab('city popu
 # QUESTION 4 : 
 
 WorldCities %>% ggplot(aes(x = population)) + geom_histogram() + xlab('city population') + 
-ylab('count of people') + ggtitle('my title') + theme_bw()
+ylab('count of people') + ggtitle('My Title') + theme_bw()
 ``` 
 
 
