@@ -86,3 +86,4 @@ ylab('count of people') + ggtitle('My Title') + theme_bw()
 
 
 
+
