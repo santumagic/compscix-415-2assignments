@@ -8,10 +8,14 @@ output:
     df_print: paged
 ---
 
+
+########## Sample Title
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-My Github repository for my assignments can be found at this URL : https://github.com/santumagic/compscix-415-2assignments.git
+My Github repository for my assignments can be found at this URL : (https://github.com/santumagic/compscix-415-2assignments.git)
 
 
 ```{r load_packages, warning=FALSE, message=FALSE}
