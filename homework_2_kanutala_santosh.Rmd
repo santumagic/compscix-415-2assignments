@@ -44,3 +44,37 @@ glimpse(mpg)
 ##**Answer:**
 
 There are 234 rows (observations) and 11 columns (varibles).
+
+
+## **Question 3:**
+
+```{r,}
+?mpg
+```
+
+##**Answer:**
+
+drv variable describes the drive type of the vehicle like f = front wheel drive, r = rear wheel drive etc. 
+
+
+## **Question 4:**
+
+```{r, message=FALSE, warning= FALSE}
+ggplot(data = mpg) + geom_point(mapping = aes(x = hwy, y = cyl))
+
+```
+
+##**Answer:**
+
+
+## **Question 5:**
+
+```{r, message=FALSE, warning=FALSE}
+ggplot(data = mpg) + geom_point(mapping = aes(x = class, y = drv))
+```
+
+
+
+##**Answer:**
+
+The graph is not useful because there is no clear relation between drv and class of a vehicle. For example, there are no front wheel and rear wheel drive types are 2 seater vehicles.
