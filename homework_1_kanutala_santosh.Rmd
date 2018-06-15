@@ -28,7 +28,7 @@ data("WorldCities")
 
 
 ```{r}
-# QUESTION 1 :
+# QUESTION 1:
 
 glimpse(WorldCities)
 ```
