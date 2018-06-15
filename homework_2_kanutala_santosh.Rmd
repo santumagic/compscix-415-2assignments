@@ -1,0 +1,46 @@
+---
+title: "COMPSCIX 415.2 Homework 2"
+author: "**Santosh Kanutala**"
+date: "6/13/2018"
+output:
+  pdf_document: default
+  html_document: 
+    df_print: paged
+  self_contained: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## **My Github repository for my assignments can be found below URL:                      (https://github.com/santumagic/compscix-415-2assignments.git)**
+
+```{r load_packages, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(mdsr)
+```
+
+## **Section 3.2.4: Excercises**
+
+## **Question 1:**
+
+```{r, message=FALSE, warning=FALSE}
+ggplot(data = mpg)
+
+```
+
+##**Answer:** 
+
+From the above function, I see a blank graph, which is a coordinate system.
+
+
+## **Question 2:**
+
+```{r, message=FALSE, warning=FALSE}
+glimpse(mpg)
+
+```
+
+##**Answer:**
+
+There are 234 rows (observations) and 11 columns (varibles).

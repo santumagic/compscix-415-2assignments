@@ -13,7 +13,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-My Github repository for my assignments can be found at this URL : (https://github.com/santumagic/compscix-415-2assignments.git)
+## My Github repository for my assignments can be found at this URL : (https://github.com/santumagic/compscix-415-2assignments.git)
 
 
 ```{r load_packages, warning=FALSE, message=FALSE}
@@ -48,6 +48,7 @@ country_col <- WorldCities$country # Pulling the country column by assigning it 
 unique(country_col) # Displaying the unique values from the field country_col
 
 ```
+
 
 
 ```{r}
