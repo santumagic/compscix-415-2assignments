@@ -130,7 +130,13 @@ hwy
 ## **Question 3:**
 
 ```{r, message=FALSE, warning=FALSE}
+# Left  
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = year))
 
+# Right  
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, size = year))
+
+##ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, shape = year))
 
 ```
 
