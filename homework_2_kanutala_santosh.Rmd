@@ -20,7 +20,7 @@ library(tidyverse)
 library(mdsr)
 ```
 
-## **Section 3.2.4: Excercises**
+## **Section 3.2.4: all excercises**
 
 ## **Question 1:**
 
@@ -64,7 +64,6 @@ ggplot(data = mpg) + geom_point(mapping = aes(x = hwy, y = cyl))
 
 ```
 
-##**Answer:**
 
 
 ## **Question 5:**
@@ -73,8 +72,42 @@ ggplot(data = mpg) + geom_point(mapping = aes(x = hwy, y = cyl))
 ggplot(data = mpg) + geom_point(mapping = aes(x = class, y = drv))
 ```
 
-
-
 ##**Answer:**
 
 The graph is not useful because there is no clear relation between drv and class of a vehicle. For example, there are no front wheel and rear wheel drive types are 2 seater vehicles.
+
+
+## **Section 3.3.1: all excercises**
+
+## **Question 1:**
+
+```{r, warning=FALSE, message=FALSE}
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
+
+```
+##**Answer:**
+
+In the above code we are trying to map the three aesthetics x, y, color to three variables of the dataset. But for the third aesthtic is assigned as a text "blue" which is invalid.
+
+
+## **Question 2:**
+
+```{r, warning=FALSE, message=FALSE}
+?mpg
+
+```
+
+##**Answer:**
+
+## **Question 3:**
+
+```{r, message=FALSE, warning=FALSE}
+
+
+```
+
+##**Answer:**
+
+
+
