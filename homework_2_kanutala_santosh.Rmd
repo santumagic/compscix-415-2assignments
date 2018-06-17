@@ -110,7 +110,6 @@ ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy), color = "blue
 By looking at the above sample data, I can devide the variables as below.
 
 ###**Categorical**
-
 manufacturer  
 model  
 cyl  
@@ -120,7 +119,6 @@ fl
 class  
 
 ###**Continuous**
-
 displ  
 year  
 cty  
@@ -130,17 +128,34 @@ hwy
 ## **Question 3:**
 
 ```{r, message=FALSE, warning=FALSE}
-# Left  
+ 
+## Mapping to Continuous Variables
 ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = year))
-
-# Right  
 ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, size = year))
+## ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, shape = year))
 
-##ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, shape = year))
+## Mapping to discrete Variables
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, size = class))
 
 ```
 
 ##**Answer:**
 
+##** Mapping to Continuous Variables**  
 
+I have mapped the aesthetics color, size and shape to a coontinuous variable "year" and following are my observations.
+
+When I mapped year to color, years are plotted with gradient colors on the map.  
+When I mapped year to size, years are plotted with different sizes and in this plot exact size of the point will explain the model years.  
+We can't map a continuous variable like year to shape aesthetic because shapes can't be ordered.
+
+##** Mapping to categorical Variables**
+
+When we map an aesthetic to a categorical variable, category names are plotted insted of the scale.
+ 
+## **Question 4:**
+
+```{r, message=FALSE, warning=FALSE}
+
+```
 
