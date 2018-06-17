@@ -98,7 +98,6 @@ ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy), color = "blue
 
 
 
-
 ## **Question 2:**
 
 ```{r, warning=FALSE, message=FALSE}
@@ -156,6 +155,39 @@ When we map an aesthetic to a categorical variable, category names are plotted i
 ## **Question 4:**
 
 ```{r, message=FALSE, warning=FALSE}
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = year, size = year))
+
 
 ```
 
+##**Answer:**
+
+When we use a variable to map it to multiple aesthetics, simply two layers will be plotted on the same plot as shown above.
+
+## **Question 5:**
+
+```{r, warning=FALSE, message=FALSE}
+?geom_point
+
+## Example by using stoke aesthetic
+
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, storke = cty), shape = 24)
+
+
+```
+
+##**Answer:**
+
+stroke aestheric controls the width of the border for any shapes with borders.
+
+## **Question 6:**
+
+```{r, warning=FALSE, message=FALSE}
+ggplot(data = mpg) + geom_point(mapping = aes(x = hwy, y = cty, colour = displ < 5))
+
+```
+
+
+##**Answer:**
+
+When we map an aesthetic like colour to displ < 5, ggplot will takes it as an expression and maps that to True or False to the colour argument.
