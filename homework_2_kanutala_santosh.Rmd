@@ -155,7 +155,7 @@ ggplot(data = mpg) + geom_point(mapping = aes(x = hwy, y = cty, colour = displ <
 ##**Answer:**
 When we map an aesthetic like colour to displ < 5, ggplot will takes it as an expression and maps that to True or False to the colour argument.
 
-## **Section 3.5.1: all excercises**
+## **Section 3.5.1: #4 and #5 only**
 ## **Question 4:**
 ```{r, warning=FALSE, message=FALSE}
 # Faceting
@@ -176,7 +176,7 @@ Basically with faceting we can observe the elements of each class separately whe
 ##**Answer:**
 nrows controls the number of rows and nrows controls the number of columns while faceting. scales is an another option to control the axis of individual facets. We can use strip.position for controlling the lable of each facet and we can use dir to control the orientation of individual facets.
 
-## **Section 3.6.1: all excercises**
+## **Section 3.6.1: #1-5. Extra Credit: Do #6**
 ## **Question 1:**
 
 ##**Answer:**
@@ -264,7 +264,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
 
 
 
-## **Section 3.7.1: all excercises**
+## **Section 3.7.1: #2 only**
 ## **Question 2:**
 
 ##**Answer:**
