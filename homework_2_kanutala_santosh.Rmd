@@ -3,9 +3,9 @@ title: "COMPSCIX 415.2 Homework 2"
 author: "**Santosh Kanutala**"
 date: "6/13/2018"
 output:
-  pdf_document: default
   html_document: 
     df_print: paged
+  pdf_document: default
   self_contained: true
 ---
 
@@ -191,3 +191,33 @@ ggplot(data = mpg) + geom_point(mapping = aes(x = hwy, y = cty, colour = displ <
 ##**Answer:**
 
 When we map an aesthetic like colour to displ < 5, ggplot will takes it as an expression and maps that to True or False to the colour argument.
+
+
+## **Section 3.5.1: all excercises**
+
+## **Question 4:**
+
+```{r, warning=FALSE, message=FALSE}
+# Faceting
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy)) + facet_wrap(~ class, nrow = 2)
+
+# Coloring
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = class))
+```
+
+##**Answer:**
+
+Basically with faceting we can observe the elements of each class separately where as with color aesthetics, it possible to observe the classes in a cluster like fashion. But it is quite difficult to read a graph with too many colors. On the otherhand with the larger datasets may be using coloring to create a overall clustering is better than reading individual clusters which are created by facets.
+
+
+## **Question 5:**
+
+```{r,}
+?facet_wrap
+```
+##**Answer:**
+nrows controls the number of rows and nrows controls the number of columns while faceting. scales is an another option to control the axis of individual facets. We can use strip.position for controlling the lable of each facet and we can use dir to control the orientation of individual facets.
+ 
+
+
+
