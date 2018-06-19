@@ -264,6 +264,12 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
 
 
 
+## **Section 3.7.1: all excercises**
+## **Question 2:**
+
+##**Answer:**
+
+geom_bar & geom_col are the two types of bar charts. geom_bar draws the hight of the bars relative to number of elements in the group, where are geom_col plots data as is with out making any changes, in otherwords it uses the value of the data element to plot the data. 
 
 
 
