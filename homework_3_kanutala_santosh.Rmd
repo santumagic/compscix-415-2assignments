@@ -23,7 +23,7 @@ library(mdsr)
 
 ### **QUESTION 1:**
 
-```{r question_1, warning=FALSE, message=FALSE}
+```{r Section 3.8.1_question_1, warning=FALSE, message=FALSE}
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
   geom_point()
 
@@ -45,7 +45,7 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 ### **ANSWER:**
 ##Lets find from the help function.
 
-```{r question_2, warning=FALSE, message=FALSE}
+```{r Section 3.8.1_question_2, warning=FALSE, message=FALSE}
 ?geom_jitter
 ```
 width and hight are the parameters that control the jittering.
@@ -54,7 +54,7 @@ width and hight are the parameters that control the jittering.
 
 ### **ANSWER:**
 
-```{r question_3, warning=FALSE, message=FALSE}
+```{r Section 3.8.1_question_3, warning=FALSE, message=FALSE}
 # geom_jitter()
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
   geom_point() + 
@@ -75,7 +75,7 @@ By observing all the below graphs, we can conclude that **position = "dodge"** i
 
 
 
-```{r question_4, warning=FALSE, message=FALSE}
+```{r Section 3.8.1_question_4, warning=FALSE, message=FALSE}
 ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
   geom_boxplot()
 
@@ -103,6 +103,33 @@ ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) +
 ## Section 3.9.1: #2 and #4 only
 
 ### **QUESTION 2:**
+
+
+```{r Section 3.9.1_question_2, warning=FALSE, message=FALSE}
+?labs ()
+```
+
+### **ANSWER:**
+
+labs will changes the lables for the axes.
+
+
+### **QUESTION 4:**
+
+
+```{r Section 3.9.1_question_4, warning=FALSE, message=FALSE}
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_point() + 
+  geom_abline() + 
+  coord_fixed()
+
+```
+
+### **ANSWER:**
+
+-- From the above graph it is observed that the both the variables are positively related to each other.  
+-- coord_fixed is important because it is making sure that the coordinates for the both variables are fixed.  
+-- geom_abline plots the slope between the variables cty and hwy.
 
 
 
