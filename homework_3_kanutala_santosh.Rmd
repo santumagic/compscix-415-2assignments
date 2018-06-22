@@ -14,16 +14,119 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 ## **My Github repository for my assignments can be found at below URL:       (https://github.com/santumagic/compscix-415-2assignments.git)**
 
-## Section 3.8.1: all excercises
 
 ```{r load_packages, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(mdsr)
 ```
+## Section 3.8.1: all excercises
 
+### **QUESTION 1:**
 
-
-```{r }
+```{r question_1, warning=FALSE, message=FALSE}
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_point()
 
 ```
+
+
+### **ANSWER:**
+
+From the mpg dataset we know that cty and hwy both are continuous variables and when we plot them in a single plot, many data points will be overlapped especially for larger datasets. We can resolve this issue (overplotting) by using adjustment to jitter with position = "jitter" or by using geom_jitter () as shown below.  
+ 
+
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_point() + 
+  geom_jitter()
+  
+  
+### **QUESTION 2:**
+
+### **ANSWER:**
+##Lets find from the help function.
+
+```{r question_2, warning=FALSE, message=FALSE}
+?geom_jitter
+```
+width and hight are the parameters that control the jittering.
+
+### **QUESTION 3:**
+
+### **ANSWER:**
+
+```{r question_3, warning=FALSE, message=FALSE}
+# geom_jitter()
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_point() + 
+  geom_jitter()
+
+# geom_count()
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_point() + 
+  geom_count()
+```
+geom_count() is varient of geom_point and it basically it counts the number of data elements or observations at a point in the plot and then maps that count to the pointing area.
+
+### **QUESTION 4:**
+
+### **ANSWER:**
+
+By observing all the below graphs, we can conclude that **position = "dodge"** is the default position adjustment for a boxplot.
+
+
+
+```{r question_4, warning=FALSE, message=FALSE}
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
+  geom_boxplot()
+
+# lets try all types of position adjustments
+
+# position = "Identity"
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
+  geom_boxplot(position = "Identity")
+  
+# position = "dodge"
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
+  geom_boxplot (position = "dodge")
+
+# position = "jitter"
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
+  geom_boxplot (position = "jitter")
+
+# position = "fill"
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
+  geom_boxplot (position = "fill")
+
+```
+
+
+## Section 3.9.1: #2 and #4 only
+
+### **QUESTION 2:**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
