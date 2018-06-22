@@ -1,0 +1,29 @@
+---
+title: "COMPSCIX 415.2 Homework 3"
+author: "Santosh Kanutala"
+date: "6/22/2018"
+output:  
+  pdf_document: default
+  html_document: 
+    df_print: paged
+  self_contained: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## **My Github repository for my assignments can be found at below URL:       (https://github.com/santumagic/compscix-415-2assignments.git)**
+
+## Section 3.8.1: all excercises
+
+```{r load_packages, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(mdsr)
+```
+
+
+
+```{r }
+
+```
+
