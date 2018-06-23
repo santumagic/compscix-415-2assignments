@@ -3,9 +3,9 @@ title: "COMPSCIX 415.2 Homework 3"
 author: "Santosh Kanutala"
 date: "6/22/2018"
 output:  
-  pdf_document: default
   html_document: 
     df_print: paged
+  pdf_document: default
   self_contained: true
 ---
 
@@ -111,7 +111,7 @@ ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) +
 
 ### **ANSWER:**
 
-labs will changes the lables for the axes.
+labs will changes the lables for the axes. In addition we can use this for titles and substitles aswell.
 
 
 ### **QUESTION 4:**
@@ -130,6 +130,34 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 -- From the above graph it is observed that the both the variables are positively related to each other.  
 -- coord_fixed is important because it is making sure that the coordinates for the both variables are fixed.  
 -- geom_abline plots the slope between the variables cty and hwy.
+
+
+## Section 4.4: #1 and #2 only
+
+### **QUESTION 1:**
+
+my_variable <- 10
+my_var1able
+
+
+### **ANSWER:**
+
+There is a type in the second line. It should be : my_variable
+
+### **QUESTION 2:**
+
+### **ANSWER:**
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x =displ, y = hwy))
+
+filter(mpg, cyl == 8)  
+filter(diamonds, carat > 3)
+
+
+
+
+
 
 
 
