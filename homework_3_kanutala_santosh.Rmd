@@ -3,11 +3,11 @@ title: "COMPSCIX 415.2 Homework 3"
 author: "Santosh Kanutala"
 date: "6/22/2018"
 output:
-  html_document:
-    df_print: paged
+  pdf_document: default
   word_document: default
   self_contained: yes
-  pdf_document: default
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -155,7 +155,6 @@ ggplot(data = mpg) +
 filter(mpg, cyl == 8)  
 filter(diamonds, carat > 3)
 
---------------------------------------
 
 ##**Data transformation**
 
@@ -216,11 +215,26 @@ and we need to ask explicitly for missing values in case of conditions.
 ### **QUESTION 1:**
 
 ```{r Section 5.4.1_question_1, warning=FALSE, message=FALSE}
+# option 1
+(opt_1 <- select(flights, dep_time, dep_delay, arr_time, arr_delay))
+# option 2
+(opt_2 <- select(flights, starts_with("dep"), starts_with("arr")))
+# option 3
+(opt_3 <- select(flights, contains("delay"), dep_time, arr_time))
+# option 4
+((opt_4 <- select(flights, ends_with("delay"), dep_time, arr_time)))
+```
+
+### **QUESTION 3:**
+
+```{r Section 5.4.1_question_3, warning=FALSE, message=FALSE}
+vars <- c("year", "month", "day", "dep_delay", "arr_delay")
+(one_of_func <- select(flights, one_of(vars)))
 
 ```
 
-
-
+### **ANSWER 4:**
+when we use one_of() with select, the select function will pulls all the matching variables   mentioned in the vector strings from the data frame.
 
 
 
