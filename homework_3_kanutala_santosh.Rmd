@@ -2,11 +2,12 @@
 title: "COMPSCIX 415.2 Homework 3"
 author: "Santosh Kanutala"
 date: "6/22/2018"
-output:  
-  pdf_document: default
-  html_document: 
+output:
+  html_document:
     df_print: paged
-  self_contained: true
+  word_document: default
+  self_contained: yes
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -186,17 +187,37 @@ library(mdsr)
 (g <- filter(flights, dep_time >= 0, dep_time <= 600))
 ```
 
+### **QUESTION 3:**
 
+```{r Section 5.2.4_question_3, warning=FALSE, message=FALSE}
+# find dep_time having missing values
+(dep_time_missing <- filter(flights, is.na(dep_time)))
+ 
+```
 
+### **ANSWER 3:**
+From the above dataset, the rows with missing dep_time are also missing the values for dep_delay  
+and arr_time variables, that means they never departed and arrived which are only planned flights.
 
+### **QUESTION 4:**
 
+```{r Section 5.2.4_question_4, warning=FALSE, message=FALSE}
+(x <- NA ^ 0)
+(y <- NA * TRUE)
+(z <- FALSE - NA)
 
+```
+### **ANSWER 4:**
+In general, any mathematiocal operation with a missing value results another missing value  
+and we need to ask explicitly for missing values in case of conditions.
 
+## Section 5.4.1: #1 and #3 only
 
+### **QUESTION 1:**
 
+```{r Section 5.4.1_question_1, warning=FALSE, message=FALSE}
 
-
-
+```
 
 
 
