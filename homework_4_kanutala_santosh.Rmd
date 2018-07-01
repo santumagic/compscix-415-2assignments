@@ -1,0 +1,21 @@
+---
+title: "homework_4_kanutala_santosh"
+author: "Santosh Kanutala"
+date: "7/1/2018"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## **My Github repository for my assignments can be found at below URL:       (https://github.com/santumagic/compscix-415-2assignments.git)**
+
+```{r load_packages, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(mdsr)
+```
+## Section 3.8.1: all excercises
+
+### **QUESTION 1:**
