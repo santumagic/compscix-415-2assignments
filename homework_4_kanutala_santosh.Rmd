@@ -3,8 +3,8 @@ title: "homework_4_kanutala_santosh"
 author: "Santosh Kanutala"
 date: "7/1/2018"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -45,7 +45,6 @@ not_cancelled %>%
 ```
 
 ### **QUESTION 4:**
-
 ```{r question_5.6.7_4, message=FALSE, warning=FALSE}
 # number of cancelled flights per day
 (cancelled_flights <- flights %>%
@@ -65,5 +64,11 @@ ggplot(cancelled_flights, aes(x = prop_cancelled, y = avg_delay)) +
 
 ```
 
+### **QUESTION 6:**
+```{r question_5.6.7_6, message=FALSE, warning=FALSE}
 
+```
+### **ANSWER 6:**
+
+sort argument will sort the elements of count () in the decending order. After the results are extracted, we can use the sort to arrange the values.
 
