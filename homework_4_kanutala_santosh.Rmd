@@ -3,8 +3,8 @@ title: "homework_4_kanutala_santosh"
 author: "Santosh Kanutala"
 date: "7/1/2018"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -72,3 +72,57 @@ ggplot(cancelled_flights, aes(x = prop_cancelled, y = avg_delay)) +
 
 sort argument will sort the elements of count () in the decending order. After the results are extracted, we can use the sort to arrange the values.
 
+## Section 10.5: #1, #2, #3 and #6 only. 
+
+### **QUESTION 2:**
+```{r question_10.5_1, message=FALSE, warning=FALSE}
+# mtcars as a data frame
+print(mtcars)
+
+# mtcars as a tibble
+print(as_tibble(mtcars))
+```
+
+When we print a dataframe whole records will be printed where as with the tibble only top rows will be printed and  
+the columns and widths are adjusted to fit the screen resolution.
+
+### **QUESTION 2:**
+```{r question_10.5_2, message=FALSE, warning=FALSE}
+# with a data frame
+df <- data_frame(abc = 1, xyz = 'a')
+df
+df$x
+df[, "xyz"]
+df[, c("abc", "xyz")]
+
+# with a tibble
+df <- tibble(abc = 1, xyz = "a")
+df
+df$x
+df[, "xyz"]
+df[, c("abc", "xyz")]
+```
+By using $ we can only extract by names. tibbles are much strictier and they alert us when we are trying to pull a column which never existed.
+
+### **QUESTION 3:**
+```{r question_10.5_3, message=FALSE, warning=FALSE}
+var <- "mpg"
+```
+### **ANSWER:**
+We can extract the refernce variable by uisng double square brackets like df[[var]]
+
+### **QUESTION 6:**
+```{r question_10.5_6, message=FALSE, warning=FALSE}
+?tibble
+```
+### **ANSWER:**
+```{r}
+getOption("tibble.max_extra_cols")
+```
+
+## Section 12.3.3: #2, #3 and #4 only. 
+
+### **QUESTION 2:**
+```{r question_12.3.3_2, message=FALSE, warning=FALSE}
+
+```
