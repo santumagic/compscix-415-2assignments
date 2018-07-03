@@ -3,8 +3,8 @@ title: "homework_4_kanutala_santosh"
 author: "Santosh Kanutala"
 date: "7/1/2018"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -160,7 +160,21 @@ spread(people, key, value) # spread the tibble
 
 ```
 
+### **QUESTION 4:**
+```{r question_12.3.3_4, message=FALSE, warning=FALSE}
+preg <- tribble(
+  ~pregnant, ~male, ~female,
+  "yes",     NA,    10,
+  "no",      20,    12
+)
+```
+### **ANSWER:**
 
+By lokking at above tibble, we can observe that there is a missing value. So we can use gather() and add na.rm = TRUE to remove the value NA. Below is the gathered tibble with variables, pregnant, gender, count.
+```{r question_12.3.3_4_ans, message=FALSE, warning=FALSE}
+preg %>%
+  gather(key = 'gender', value = 'value', c(2:3), na.rm = TRUE)
+```
 
 
 

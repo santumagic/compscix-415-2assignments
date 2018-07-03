@@ -451,6 +451,26 @@ people # display the modified tibble</code></pre>
 ## 2 Phillip Woods           1    45    186
 ## 3 Phillip Woods           2    50     NA</code></pre>
 </div>
+<div id="question-4-1" class="section level3">
+<h3><strong>QUESTION 4:</strong></h3>
+<pre class="r"><code>preg &lt;- tribble(
+  ~pregnant, ~male, ~female,
+  &quot;yes&quot;,     NA,    10,
+  &quot;no&quot;,      20,    12
+)</code></pre>
+</div>
+<div id="answer-4" class="section level3">
+<h3><strong>ANSWER:</strong></h3>
+<p>By lokking at above tibble, we can observe that there is a missing value. So we can use gather() and add na.rm = TRUE to remove the value NA. Below is the gathered tibble with variables, pregnant, gender, count.</p>
+<pre class="r"><code>preg %&gt;%
+  gather(key = 'gender', value = 'value', c(2:3), na.rm = TRUE)</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   pregnant gender value
+## * &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt;
+## 1 no       male      20
+## 2 yes      female    10
+## 3 no       female    12</code></pre>
+</div>
 </div>
 
 
