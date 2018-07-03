@@ -217,6 +217,24 @@ Both unite() and separate() have a remove argument. What does it do? Why would y
 ### **ANSWER:**
 remove argument will remove the original input columns from the output. If we change it to FALSE then the original columns are retained in the output.
 
+### **Data import Excercises:**
+
+```{r}
+# Load the baby_names file
+baby_names_txt <- read.delim("/Users/skanutal/Documents/Santosh/Learning/Berkeley/baby_names.txt", sep="|")
+# glimpse the data from txt file
+glimpse(baby_names_txt) 
+# Export the .txt file as csv into a different location
+baby_names_csv <- write_delim(
+  baby_names_txt, delim = '|',path = "/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/baby_names.csv"
+  )
+# Load the newly created csv file
+baby_names_csv_final <- read.csv(
+  "/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/baby_names.csv", sep="|"
+  )
+# glimpse the data from the final csv file
+glimpse(baby_names_csv_final)
+```
 
 
 

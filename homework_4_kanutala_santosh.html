@@ -544,6 +544,37 @@ tibble(x = c(&quot;a,b,c&quot;, &quot;d,e&quot;, &quot;f,g,i&quot;)) %&gt;%
 <h3><strong>ANSWER:</strong></h3>
 <p>remove argument will remove the original input columns from the output. If we change it to FALSE then the original columns are retained in the output.</p>
 </div>
+<div id="data-import-excercises" class="section level3">
+<h3><strong>Data import Excercises:</strong></h3>
+<pre class="r"><code># Load the baby_names file
+baby_names_txt &lt;- read.delim(&quot;/Users/skanutal/Documents/Santosh/Learning/Berkeley/baby_names.txt&quot;, sep=&quot;|&quot;)
+# glimpse the data from txt file
+glimpse(baby_names_txt) </code></pre>
+<pre><code>## Observations: 30,000
+## Variables: 5
+## $ year &lt;int&gt; 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 188...
+## $ sex  &lt;fct&gt; F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, ...
+## $ name &lt;fct&gt; Mary, Anna, Emma, Elizabeth, Minnie, Margaret, Ida, Alice...
+## $ n    &lt;int&gt; 7065, 2604, 2003, 1939, 1746, 1578, 1472, 1414, 1320, 128...
+## $ prop &lt;dbl&gt; 0.072384329, 0.026679234, 0.020521700, 0.019865989, 0.017...</code></pre>
+<pre class="r"><code># Export the .txt file as csv into a different location
+baby_names_csv &lt;- write_delim(
+  baby_names_txt, delim = '|',path = &quot;/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/baby_names.csv&quot;
+  )
+# Load the newly created csv file
+baby_names_csv_final &lt;- read.csv(
+  &quot;/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/baby_names.csv&quot;, sep=&quot;|&quot;
+  )
+# glimpse the data from the final csv file
+glimpse(baby_names_csv_final)</code></pre>
+<pre><code>## Observations: 30,000
+## Variables: 5
+## $ year &lt;int&gt; 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 188...
+## $ sex  &lt;fct&gt; F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, ...
+## $ name &lt;fct&gt; Mary, Anna, Emma, Elizabeth, Minnie, Margaret, Ida, Alice...
+## $ n    &lt;int&gt; 7065, 2604, 2003, 1939, 1746, 1578, 1472, 1414, 1320, 128...
+## $ prop &lt;dbl&gt; 0.072384329, 0.026679234, 0.020521700, 0.019865989, 0.017...</code></pre>
+</div>
 </div>
 
 
