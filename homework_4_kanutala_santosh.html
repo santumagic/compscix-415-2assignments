@@ -472,6 +472,79 @@ people # display the modified tibble</code></pre>
 ## 3 no       female    12</code></pre>
 </div>
 </div>
+<div id="section-12.4.3-1-and-2-only." class="section level2">
+<h2>Section 12.4.3: #1 and #2 only.</h2>
+<div id="question-1" class="section level3">
+<h3><strong>QUESTION 1:</strong></h3>
+<pre class="r"><code>tibble(x = c(&quot;a,b,c&quot;, &quot;d,e,f,g&quot;, &quot;h,i,j&quot;)) %&gt;% 
+  separate(x, c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;))</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   one   two   three
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     f    
+## 3 h     i     j</code></pre>
+<pre class="r"><code>tibble(x = c(&quot;a,b,c&quot;, &quot;d,e&quot;, &quot;f,g,i&quot;)) %&gt;% 
+  separate(x, c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;))</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   one   two   three
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     &lt;NA&gt; 
+## 3 f     g     i</code></pre>
+<pre class="r"><code># help on the separate
+?separate</code></pre>
+</div>
+<div id="answer-5" class="section level3">
+<h3><strong>ANSWER:</strong></h3>
+<p>‘extra’ argument controls what happens when there are too many pieces. It can drop extra values by warning or without warning or it can merge.<br />
+‘fill’ controls what happens when there are not enough piece by filling the missing values from right or left with or without a warning.</p>
+<pre class="r"><code># using extra = &quot;drop&quot;
+tibble(x = c(&quot;a,b,c&quot;, &quot;d,e,f,g&quot;, &quot;h,i,j&quot;)) %&gt;% 
+  separate(x, c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;), extra = &quot;drop&quot;)</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   one   two   three
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     f    
+## 3 h     i     j</code></pre>
+<pre class="r"><code># using extra = &quot;merge&quot;
+tibble(x = c(&quot;a,b,c&quot;, &quot;d,e,f,g&quot;, &quot;h,i,j&quot;)) %&gt;% 
+  separate(x, c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;), extra = &quot;merge&quot;)</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   one   two   three
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     f,g  
+## 3 h     i     j</code></pre>
+<pre class="r"><code># using fill = &quot;right&quot;
+tibble(x = c(&quot;a,b,c&quot;, &quot;d,e&quot;, &quot;f,g,i&quot;)) %&gt;% 
+  separate(x, c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;), fill = &quot;right&quot;)</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   one   two   three
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     &lt;NA&gt; 
+## 3 f     g     i</code></pre>
+<pre class="r"><code># using fill = &quot;left&quot;
+tibble(x = c(&quot;a,b,c&quot;, &quot;d,e&quot;, &quot;f,g,i&quot;)) %&gt;% 
+  separate(x, c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;), fill = &quot;left&quot;)</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   one   two   three
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 &lt;NA&gt;  d     e    
+## 3 f     g     i</code></pre>
+</div>
+<div id="question-2-4" class="section level3">
+<h3><strong>QUESTION 2:</strong></h3>
+<p>Both unite() and separate() have a remove argument. What does it do? Why would you set it to FALSE?</p>
+</div>
+<div id="answer-7" class="section level3">
+<h3><strong>ANSWER:</strong></h3>
+<p>remove argument will remove the original input columns from the output. If we change it to FALSE then the original columns are retained in the output.</p>
+</div>
+</div>
 
 
 

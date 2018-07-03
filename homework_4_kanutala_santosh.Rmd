@@ -3,8 +3,8 @@ title: "homework_4_kanutala_santosh"
 author: "Santosh Kanutala"
 date: "7/1/2018"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -176,11 +176,46 @@ preg %>%
   gather(key = 'gender', value = 'value', c(2:3), na.rm = TRUE)
 ```
 
+## Section 12.4.3: #1 and #2 only. 
 
+### **QUESTION 1:**
+```{r question_12.4.3_1, message=FALSE, warning=FALSE}
+tibble(x = c("a,b,c", "d,e,f,g", "h,i,j")) %>% 
+  separate(x, c("one", "two", "three"))
 
+tibble(x = c("a,b,c", "d,e", "f,g,i")) %>% 
+  separate(x, c("one", "two", "three"))
 
+# help on the separate
+?separate
+```
+### **ANSWER:**
+'extra' argument controls what happens when there are too many pieces. It can drop extra values by warning or without warning or it can merge.  
+'fill' controls what happens when there are not enough piece by filling the missing values from right or left with or without a warning.
 
+```{r question_12.4.3_1_ans, message=FALSE, warning=FALSE}
+# using extra = "drop"
+tibble(x = c("a,b,c", "d,e,f,g", "h,i,j")) %>% 
+  separate(x, c("one", "two", "three"), extra = "drop")
 
+# using extra = "merge"
+tibble(x = c("a,b,c", "d,e,f,g", "h,i,j")) %>% 
+  separate(x, c("one", "two", "three"), extra = "merge")
+
+# using fill = "right"
+tibble(x = c("a,b,c", "d,e", "f,g,i")) %>% 
+  separate(x, c("one", "two", "three"), fill = "right")
+
+# using fill = "left"
+tibble(x = c("a,b,c", "d,e", "f,g,i")) %>% 
+  separate(x, c("one", "two", "three"), fill = "left")
+```
+
+### **QUESTION 2:**
+Both unite() and separate() have a remove argument. What does it do? Why would you set it to FALSE?
+  
+### **ANSWER:**
+remove argument will remove the original input columns from the output. If we change it to FALSE then the original columns are retained in the output.
 
 
 
