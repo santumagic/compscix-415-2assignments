@@ -3,8 +3,8 @@ title: "homework_4_kanutala_santosh"
 author: "Santosh Kanutala"
 date: "7/1/2018"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -125,4 +125,51 @@ getOption("tibble.max_extra_cols")
 ### **QUESTION 2:**
 ```{r question_12.3.3_2, message=FALSE, warning=FALSE}
 
+# table4a %>%
+  # gather(1999, 2000, key = "year", value = "cases") # commented out as it is failing and need to ask instructor
 ```
+### **ANSWER:**
+we need to add the quotes around 1999 & 2000 otherwise 1999 & 2000 are treated as columns in the data frame. Below is the modified code.
+```{r question_12.3.3_2_ans, message=FALSE, warning=FALSE}
+table4a %>%
+  gather('1999', '2000', key = "year", value = "cases")
+```
+
+### **QUESTION 3:**
+```{r question_12.3.3_3, message=FALSE, warning=FALSE}
+# given code 
+ people <- tribble(
+   ~name,             ~key,    ~value,
+  #-----------------|--------|------
+  "Phillip Woods",   "age",       45,
+  "Phillip Woods",   "height",   186,
+  "Phillip Woods",   "age",       50,
+  "Jessica Cordero", "age",       37,
+  "Jessica Cordero", "height",   156
+)
+
+# Spreading the above tibble
+# spread(people, key, value) # commented out as it is failing and need to ask instructor
+```
+### **ANSWER:**
+Duplicates are identified. In otherwords Phillip has two age records. In this case we can add another column related to the row identifier like the people_id then the issue will be resolved. Below is the code for the same.
+```{r}
+people$people_id <- c(1, 1, 2, 1, 1)
+people # display the modified tibble
+spread(people, key, value) # spread the tibble
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
