@@ -15,7 +15,55 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r load_packages, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(mdsr)
+library(nycflights13)
 ```
-## Section 3.8.1: all excercises
+## Section 5.6.7: #2, #4 and #6 only. Extra Credit: Do #5
 
-### **QUESTION 1:**
+### **QUESTION 2:**
+```{r question_5.6.7_2, message=FALSE, warning=FALSE}
+# First lets find the not cancelled flights.
+not_cancelled <- flights %>% 
+  filter(!is.na(dep_delay), !is.na(arr_delay))
+
+# given code for not_cancelled %>% count(dest)
+not_cancelled %>%
+  count(dest)
+
+# new code for not_cancelled %>% count(dest) by group by and summarise
+not_cancelled %>%
+  group_by(dest) %>%
+  summarise(n = n())
+
+# given code for not_cancelled %>% count(tailnum, wt = distance)
+not_cancelled %>%
+  count(tailnum, wt = distance)
+
+# new code for not_cancelled %>% count(tailnum, wt = distance) group by and summarise
+not_cancelled %>%
+  group_by(tailnum) %>%
+  summarize(n = sum(distance, na.rm = TRUE))
+```
+
+### **QUESTION 4:**
+
+```{r question_5.6.7_4, message=FALSE, warning=FALSE}
+# number of cancelled flights per day
+(cancelled_flights <- flights %>%
+  filter(is.na(dep_time)) %>%
+  count(day))
+
+# proportion of day cancelled flights vs aerage delays
+(cancelled_flights <- flights %>%
+  group_by(day) %>%
+  summarize(prop_cancelled = sum(is.na(dep_time)) / n(),
+            avg_delay = mean(dep_time, na.rm = TRUE)))
+
+# plot for the relationship
+ggplot(cancelled_flights, aes(x = prop_cancelled, y = avg_delay)) +
+  geom_point() +
+  geom_smooth()
+
+```
+
+
+
