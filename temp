@@ -1,0 +1,5 @@
+45 16 * * * /usr/local/McAfee/AntiMalware/VShieldTaskManager 4 >> /dev/null 2>&1
+1 12 7 6 * /usr/local/McAfee/AntiMalware/VShieldTaskManager 5 >> /dev/null 2>&1
+1 12 14 6 * /usr/local/McAfee/AntiMalware/VShieldTaskManager 6 >> /dev/null 2>&1
+2 12 28 6 * /usr/local/McAfee/AntiMalware/VShieldTaskManager 8 >> /dev/null 2>&1
+* * * * * /Users/skanutal/Desktop/scheduler.sh >> /dev/null 2>&1
