@@ -3,12 +3,17 @@ title: "homework_5_kanutala_santosh"
 author: "Santosh Kanutala"
 date: "7/3/2018"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r,hgg}
+
 ```
 
 
