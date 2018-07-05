@@ -3,17 +3,23 @@ title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
 date: "7/5/2018"
 output:
-  html_document:
+  html_document: 
     df_print: paged
   pdf_document: default
+  self_contained: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r,hgg}
+## **My Github repository for my assignments can be found at below URL:       (https://github.com/santumagic/compscix-415-2assignments.git)**
 
+```{r load_packages, message=FALSE, warning=FALSE}
+# Load required packages
+library(tidyverse)
+library(mdsr)
+library(nycflights13)
 ```
 
 
