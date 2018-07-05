@@ -23,6 +23,9 @@ library(mdsr)
 library(nycflights13)
 ```
 
+```{r, first question}
+
+```
 
 
 
