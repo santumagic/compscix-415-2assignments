@@ -1,0 +1,44 @@
+---
+title: "homework_5_kanutala_santosh"
+author: "Santosh Kanutala"
+date: "7/3/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+diamonds %>% filter(y>10)
+diamonds %>% arrange(desc(y)) %>% select (y)
+glimpse(diamonds)
+
+```
+
+
+```{r}
+
+ggplot(data = diamonds) + 
+       geom_boxplot(aes(x = cut, y = price)) +
+       coord_flip()
+x = reorder(cut, price, FUN = median())
+```
+
+```{r}
+?faithful
+glimpse(faithful)
+
+ggplot(data = faithful) + 
+  geom_point(aes(x = eruptions, y = waiting))
+ 
+```
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = cut, y = price)) + 
+  geom_boxplot()
+```
+
+
