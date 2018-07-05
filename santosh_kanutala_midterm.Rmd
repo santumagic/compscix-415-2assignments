@@ -13,7 +13,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## **My Github repository for my assignments can be found at below URL:       (https://github.com/santumagic/compscix-415-2assignments.git)**
+## **My Github repository for my assignments can be found at below URL:**    
+##** (https://github.com/santumagic/compscix-415-2assignments.git)**
 
 ```{r load_packages, message=FALSE, warning=FALSE}
 # Load required packages
