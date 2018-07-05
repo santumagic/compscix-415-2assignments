@@ -238,7 +238,25 @@ when we use one_of() with select, the select function will pulls all the matchin
 
 
 
+flights %>% 
+group_by(month, day) %>%
+summerise(num_cancelled =  filter(is.na(dep_delay) | is.na(arr_delay)))
 
+
+
+
+
+
+?data.table
+
+
+
+
+
+
+
+
+  
 
 
 

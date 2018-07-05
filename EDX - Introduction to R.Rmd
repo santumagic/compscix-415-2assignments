@@ -1,0 +1,49 @@
+---
+title: "EDX - Introduction to R"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+## Matrix Subsetting
+
+```{r}
+(m <- matrix(sample(1:15, 12), nrow = 3))
+
+(m[1,3])
+
+(m[3,2])
+
+(m[3,])
+
+mean(m[,3])
+
+(m[4])
+
+(m[2, c(2,3)])
+
+(m[c(1,2),c(2,3)])
+
+rownames(m) <- c("r1","r2","r3")
+colnames(m) <- c("a","b","c","d")
+m
+(m[2,3])
+(m["r2","c"])
+(m[2,"c"])
+(m[3,c("c","d")])
+(m[c(FALSE, FALSE, TRUE),
+   c(FALSE, FALSE, TRUE, TRUE)])
+
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
