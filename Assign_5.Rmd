@@ -1,7 +1,7 @@
 ---
-title: "homework_5_kanutala_santosh"
+title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
-date: "7/3/2018"
+date: "7/5/2018"
 output:
   pdf_document: default
   html_document:
