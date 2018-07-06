@@ -17,7 +17,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ## **My Github repository for my midterm can be found at below URL:**    
 ##** (https://github.com/santumagic/compscix-415-2assignments.git)**
 
-Midterm Exam
 
 ## RStudio and R Markdown
 ```{r load_packages, message=FALSE, warning=FALSE}
