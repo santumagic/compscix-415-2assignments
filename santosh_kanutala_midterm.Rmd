@@ -22,19 +22,20 @@ knitr::opts_chunk$set(echo = TRUE)
 My homework assignments can be found at   https://github.com/santumagic/compscix-415-2assignments.git
 
 ## RStudio and R Markdown
+### Question: 1
+As part of this question, I have loaded the required packages and added instructions for table of contents etc in the YAML header.
 ```{r load_packages, message=FALSE, warning=FALSE}
 # Load the required packages
 library(tidyverse)
 library(mdsr)
 library(nycflights13)
 ```
-### Question: 1
+
+## The tidyverse packages
 Plotting - **ggplot2**  
 Data munging/wrangling - **dplyr** and **tidyr**  
 Reshaping (speading and gathering) data - **tidyr**  
 Importing/exporting data - **readr**  
-
-## The tidyverse packages
 
 ### Question: 1
 
