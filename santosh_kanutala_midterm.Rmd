@@ -6,7 +6,7 @@ output:
   html_document:
     highlight: zenburn
     number_sections: no
-    theme: spacelab
+    theme: readable
     toc: yes
     toc_depth: 3
   pdf_document:
