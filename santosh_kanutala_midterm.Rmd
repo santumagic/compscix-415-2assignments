@@ -9,7 +9,7 @@ output:
     theme: united
     toc: yes
     toc_depth: 3
-    template: flatly
+    fig_caption: true
   pdf_document:
     toc: yes
     toc_depth: 3
