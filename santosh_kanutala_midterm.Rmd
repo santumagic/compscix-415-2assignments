@@ -9,9 +9,10 @@ output:
     theme: united
     toc: yes
     toc_depth: 3
+    template: flatly
   pdf_document:
     toc: yes
-    toc_depth: '3'
+    toc_depth: 3
 ---
 
 ```{r setup, include=FALSE}
