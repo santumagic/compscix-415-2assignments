@@ -3,16 +3,15 @@ title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
 date: "7/5/2018"
 output:
-  html_document: 
-    #df_print: paged
-    toc: true # table of content true
-    toc_depth: 3  # upto three depths of headings (specified by #, ## and ###)
-    number_sections: false  ## if you want number sections at each table header
-    theme: united  # many options for theme, this one is my favorite.
-    highlight: tango  # specifies the syntax highlighting style
-  #pdf_document: default
-  #self_contained: true
-  #theme: united
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+  html_document:
+    highlight: tango
+    number_sections: no
+    theme: united
+    toc: yes
+    toc_depth: 3
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Github location
-My homework assignments can be found at -   (https://github.com/santumagic/compscix-415-2assignments.git)
+My homework assignments can be found at   https://github.com/santumagic/compscix-415-2assignments.git
 
 ## RStudio and R Markdown
 ```{r load_packages, message=FALSE, warning=FALSE}
