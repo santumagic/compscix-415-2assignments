@@ -56,8 +56,8 @@ my_string <- c('has', 'an', 'error', 'in', 'it')
 my_string
 ```
 ### Question: 3
-```{rR Basics_Q3, warning=FALSE, message=FALSE}
-my_vector <- c(1, 2, '3', '4', 5) 
+```{r R Basics_Q3, warning=FALSE, message=FALSE}
+my_vector <- c(1, 2, '3', '4', 5)
 my_vector
 ```
 
