@@ -3,13 +3,13 @@ title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
 date: "7/5/2018"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
   html_document:
     highlight: tango
     number_sections: no
     theme: united
+    toc: yes
+    toc_depth: 3
+  pdf_document:
     toc: yes
     toc_depth: 3
 ---
@@ -55,8 +55,11 @@ My_data.name___is.too00ooLong <- c( 1 , 2 , 3 )
 my_string <- c('has', 'an', 'error', 'in', 'it')
 my_string
 ```
-
 ### Question: 3
+```{rR Basics_Q3, warning=FALSE, message=FALSE}
+my_vector <- c(1, 2, '3', '4', 5) 
+my_vector
+```
 
 ## Data import/export
 
