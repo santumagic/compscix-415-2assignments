@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Github location
-(https://github.com/santumagic/compscix-415-2assignments.git)
+My homework assignments can be found at -   (https://github.com/santumagic/compscix-415-2assignments.git)
 
 ## RStudio and R Markdown
 ```{r load_packages, message=FALSE, warning=FALSE}
