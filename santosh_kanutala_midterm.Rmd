@@ -48,7 +48,7 @@ Importing/exporting data - **read_csv()** and **read_delim()**
 ```{r R Basics_Q1, warning=FALSE, message=FALSE}
 My_data.name___is.too00ooLong <- c( 1 , 2 , 3 )
 ```
-**Answer:** Just with one change (removal of '!'), the code works.
+**Answer:** Just with one change (removal of '!'), the code works.  
 ### Question: 2
 ```{r R Basics_Q2, warning=FALSE, message=FALSE}
 # this is a charactor vector
@@ -60,6 +60,7 @@ my_string
 my_vector <- c(1, 2, '3', '4', 5)
 my_vector
 ```
+**Answer:** This is a numeric vector and with or without the single or double quotes, vactor takes values.  
 
 ## Data import/export
 
