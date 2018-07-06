@@ -4,7 +4,7 @@ author: "Santosh Kanutala"
 date: "7/5/2018"
 output:
   html_document:
-    highlight: kate
+    highlight: zenburn
     number_sections: no
     theme: united
     toc: yes
