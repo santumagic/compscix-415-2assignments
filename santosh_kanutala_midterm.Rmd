@@ -31,31 +31,31 @@ library(mdsr)
 library(nycflights13)
 ```
 ## The tidyverse packages
-### Question: 1
++ ### Question: 1
 Plotting - **ggplot2**  
 Data munging/wrangling - **dplyr** and **tidyr**  
 Reshaping (speading and gathering) data - **tidyr**  
 Importing/exporting data - **readr**  
 
-### Question: 2
++ ### Question: 2
 Plotting - **ggplot()** and **aes()**  
 Data munging/wrangling - **select()** and **filter()**    
 Reshaping (speading and gathering) data - **separate()** and **extract()**  
 Importing/exporting data - **read_csv()** and **read_delim()**   
 
 ## R Basics
-### Question: 1
++ ### Question: 1
 ```{r R Basics_Q1, warning=FALSE, message=FALSE}
 My_data.name___is.too00ooLong <- c( 1 , 2 , 3 )
 ```
 **Answer:** Just with one change (removal of '!'), the code works.  
-### Question: 2
++ ### Question: 2
 ```{r R Basics_Q2, warning=FALSE, message=FALSE}
 # this is a charactor vector
 my_string <- c('has', 'an', 'error', 'in', 'it')
 my_string
 ```
-### Question: 3
++ ### Question: 3
 ```{r R Basics_Q3, warning=FALSE, message=FALSE}
 my_vector <- c(1, 2, '3', '4', 5)
 my_vector
