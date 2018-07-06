@@ -3,10 +3,11 @@ title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
 date: "7/5/2018"
 output:
-  html_document: 
+  html_document: default
     df_print: paged
-  pdf_document: default
+  pdf_document: 
   self_contained: true
+  theme: united
 ---
 
 ```{r setup, include=FALSE}
@@ -16,6 +17,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ## **My Github repository for my midterm can be found at below URL:**    
 ##** (https://github.com/santumagic/compscix-415-2assignments.git)**
 
+Midterm Exam
+
+## RStudio and R Markdown
 ```{r load_packages, message=FALSE, warning=FALSE}
 # Load the required packages
 library(tidyverse)
@@ -23,13 +27,63 @@ library(mdsr)
 library(nycflights13)
 ```
 
-```{r load_packages_again & again, message=FALSE, warning=FALSE}
-# Load the required packages again
-library(tidyverse)
-library(mdsr)
-library(nycflights13)
+### Question: 1
 
-```
+
+## The tidyverse packages
+
+### Question: 1
+
+### Question: 2
+
+## R Basics
+
+### Question: 1
+
+### Question: 2
+
+### Question: 3
+
+## Data import/export
+
+### Question: 1
+
+### Question: 2
+
+## Visualization
+
+### Question: 1
+
+### Question: 2
+
+### Question: 3
+
+## Data munging and wrangling
+
+### Question: 1
+
+### Question: 2
+
+### Question: 3
+
+## EDA
+
+### Question: 1
+
+### Question: 2
+
+### Question: 3
+
+### Question: 4
+
+### Question: 5
+
+### Question: 6
+
+## Git and Github
+
+
+
 
 
 
