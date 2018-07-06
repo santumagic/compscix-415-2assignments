@@ -28,9 +28,11 @@ library(tidyverse)
 library(mdsr)
 library(nycflights13)
 ```
-
 ### Question: 1
-
+Plotting - **ggplot2**  
+Data munging/wrangling - **dplyr** and **tidyr**  
+Reshaping (speading and gathering) data - **tidyr**  
+Importing/exporting data - **readr**  
 
 ## The tidyverse packages
 
