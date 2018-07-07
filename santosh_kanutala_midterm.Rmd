@@ -1,13 +1,13 @@
 ---
 title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
-date: "7/5/2018"
+date: "7/6/2018"
 output:
   pdf_document:
     toc: yes
     toc_depth: 3
   html_document:
-    highlight: zenburn
+    highlight: kate
     number_sections: no
     theme: readable
     toc: yes
