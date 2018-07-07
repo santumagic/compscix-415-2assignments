@@ -6,8 +6,9 @@ output:
   pdf_document:
     toc: yes
     toc_depth: 3
+    highlight: tango
   html_document:
-    highlight: kate
+    highlight: tango
     number_sections: no
     theme: readable
     toc: yes
