@@ -4,7 +4,7 @@ author: "Santosh Kanutala"
 date: "7/6/2018"
 output:
   html_document:
-    highlight: espresso
+    highlight: tango
     number_sections: no
     theme: readable
     toc: yes

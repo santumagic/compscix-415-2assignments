@@ -156,10 +156,22 @@ $(document).ready(function () {
 <div id="TOC">
 <ul>
 <li><a href="#github-location">Github location</a></li>
-<li><a href="#rstudio-and-r-markdown">RStudio and R Markdown</a></li>
-<li><a href="#the-tidyverse-packages">The tidyverse packages</a></li>
-<li><a href="#r-basics">R Basics</a></li>
-<li><a href="#data-importexport">Data import/export</a></li>
+<li><a href="#rstudio-and-r-markdown">RStudio and R Markdown</a><ul>
+<li><a href="#question-1">Question: 1</a></li>
+</ul></li>
+<li><a href="#the-tidyverse-packages">The tidyverse packages</a><ul>
+<li><a href="#question-1-1">Question: 1</a></li>
+<li><a href="#question-2">Question: 2</a></li>
+</ul></li>
+<li><a href="#r-basics">R Basics</a><ul>
+<li><a href="#question-1-2">Question: 1</a></li>
+<li><a href="#question-2-1">Question: 2</a></li>
+<li><a href="#question-3">Question: 3</a></li>
+</ul></li>
+<li><a href="#data-importexport">Data import/export</a><ul>
+<li><a href="#question-1-3">Question: 1</a></li>
+<li><a href="#question-2-2">Question: 2</a></li>
+</ul></li>
 <li><a href="#visualization">Visualization</a><ul>
 <li><a href="#question-1-4">Question: 1</a></li>
 <li><a href="#question-2-3">Question: 2</a></li>
@@ -188,57 +200,58 @@ $(document).ready(function () {
 </div>
 <div id="rstudio-and-r-markdown" class="section level2">
 <h2>RStudio and R Markdown</h2>
-<ul>
-<li><h3 id="question-1">Question: 1</h3>
-As part of this question, I have loaded the required packages and added instructions for table of contents etc in the YAML header.</li>
-</ul>
+<div id="question-1" class="section level3">
+<h3>Question: 1</h3>
+<p>As part of this question, I have loaded the required packages and added instructions for table of contents etc in the YAML header.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load the required packages</span>
 <span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(mdsr)
 <span class="kw">library</span>(nycflights13)</code></pre></div>
 </div>
+</div>
 <div id="the-tidyverse-packages" class="section level2">
 <h2>The tidyverse packages</h2>
-<ul>
-<li><h3 id="question-1-1">Question: 1</h3>
+<div id="question-1-1" class="section level3">
+<h3>Question: 1</h3>
 <p>Plotting - <strong>ggplot2</strong><br />
 Data munging/wrangling - <strong>dplyr</strong> and <strong>tidyr</strong><br />
 Reshaping (speading and gathering) data - <strong>tidyr</strong><br />
-Importing/exporting data - <strong>readr</strong></p></li>
-<li><h3 id="question-2">Question: 2</h3>
+Importing/exporting data - <strong>readr</strong></p>
+</div>
+<div id="question-2" class="section level3">
+<h3>Question: 2</h3>
 <p>Plotting - <strong>ggplot()</strong> and <strong>aes()</strong><br />
 Data munging/wrangling - <strong>select()</strong> and <strong>filter()</strong><br />
 Reshaping (speading and gathering) data - <strong>separate()</strong> and <strong>extract()</strong><br />
-Importing/exporting data - <strong>read_csv()</strong> and <strong>read_delim()</strong></p></li>
-</ul>
+Importing/exporting data - <strong>read_csv()</strong> and <strong>read_delim()</strong></p>
+</div>
 </div>
 <div id="r-basics" class="section level2">
 <h2>R Basics</h2>
-<ul>
-<li><h3 id="question-1-2">Question: 1</h3></li>
-</ul>
+<div id="question-1-2" class="section level3">
+<h3>Question: 1</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">My_data.name___is.too00ooLong &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">2</span> , <span class="dv">3</span> )</code></pre></div>
 <p><strong>Answer:</strong> Just with one change (removal of ‘!’), the code works.</p>
-<ul>
-<li><h3 id="question-2-1">Question: 2</h3></li>
-</ul>
+</div>
+<div id="question-2-1" class="section level3">
+<h3>Question: 2</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># this is a charactor vector</span>
 my_string &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">'has'</span>, <span class="st">'an'</span>, <span class="st">'error'</span>, <span class="st">'in'</span>, <span class="st">'it'</span>)
 my_string</code></pre></div>
 <pre><code>## [1] &quot;has&quot;   &quot;an&quot;    &quot;error&quot; &quot;in&quot;    &quot;it&quot;</code></pre>
-<ul>
-<li><h3 id="question-3">Question: 3</h3></li>
-</ul>
+</div>
+<div id="question-3" class="section level3">
+<h3>Question: 3</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">'3'</span>, <span class="st">'4'</span>, <span class="dv">5</span>)
 my_vector</code></pre></div>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot;</code></pre>
 <p><strong>Answer:</strong> This is a numeric vector and with or without the single or double quotes, vactor takes values.</p>
 </div>
+</div>
 <div id="data-importexport" class="section level2">
 <h2>Data import/export</h2>
-<ul>
-<li><h3 id="question-1-3">Question: 1</h3></li>
-</ul>
+<div id="question-1-3" class="section level3">
+<h3>Question: 1</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Download and import the file rail_trail.txt</span>
 rail_trail.txt &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;/Users/skanutal/Documents/Santosh/Learning/Berkeley/rail_trail.txt&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;|&quot;</span>)
 <span class="co">#glimpse the data from txt file</span>
@@ -255,9 +268,9 @@ rail_trail.txt &lt;-<span class="st"> </span><span class="kw">read.delim</span>(
 ## $ precip     &lt;dbl&gt; 0.00, 0.29, 0.32, 0.00, 0.14, 0.02, 0.00, 0.00, 0.0...
 ## $ volume     &lt;int&gt; 501, 419, 397, 385, 200, 375, 417, 629, 533, 547, 4...
 ## $ weekday    &lt;int&gt; 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, ...</code></pre>
-<ul>
-<li><h3 id="question-2-2">Question: 2</h3></li>
-</ul>
+</div>
+<div id="question-2-2" class="section level3">
+<h3>Question: 2</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Export the .txt file as csv into a different location</span>
 rail_trail_csv &lt;-<span class="st"> </span><span class="kw">write_delim</span>(
   rail_trail.txt, <span class="dt">delim =</span> <span class="st">'|'</span>,<span class="dt">path =</span> <span class="st">&quot;/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/rail_trail.csv&quot;</span>
@@ -280,6 +293,7 @@ rail_trail_csv_final &lt;-<span class="st"> </span><span class="kw">read.csv</sp
 ## $ precip     &lt;dbl&gt; 0.00, 0.29, 0.32, 0.00, 0.14, 0.02, 0.00, 0.00, 0.0...
 ## $ volume     &lt;int&gt; 501, 419, 397, 385, 200, 375, 417, 629, 533, 547, 4...
 ## $ weekday    &lt;int&gt; 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, ...</code></pre>
+</div>
 </div>
 <div id="visualization" class="section level2">
 <h2>Visualization</h2>
