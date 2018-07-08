@@ -4,7 +4,7 @@ author: "Santosh Kanutala"
 date: "7/6/2018"
 output:
   html_document:
-    highlight: tango
+    highlight: espresso
     number_sections: no
     theme: readable
     toc: yes
@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 My homework assignments can be found at   https://github.com/santumagic/compscix-415-2assignments.git
 
 ## RStudio and R Markdown
-+ ### Question: 1
+### Question: 1
 As part of this question, I have loaded the required packages and added instructions for table of contents etc in the YAML header.
 ```{r load_packages, message=FALSE, warning=FALSE}
 # Load the required packages
@@ -32,32 +32,32 @@ library(mdsr)
 library(nycflights13)
 ```
 ## The tidyverse packages
-+ ### Question: 1
+### Question: 1
 Plotting - **ggplot2**  
 Data munging/wrangling - **dplyr** and **tidyr**  
 Reshaping (speading and gathering) data - **tidyr**  
 Importing/exporting data - **readr**  
 
-+ ### Question: 2
+### Question: 2
 Plotting - **ggplot()** and **aes()**  
 Data munging/wrangling - **select()** and **filter()**    
 Reshaping (speading and gathering) data - **separate()** and **extract()**  
 Importing/exporting data - **read_csv()** and **read_delim()**   
 
 ## R Basics
-+ ### Question: 1
+### Question: 1
 ```{r R Basics_Q1, warning=FALSE, message=FALSE}
 My_data.name___is.too00ooLong <- c( 1 , 2 , 3 )
 ```
 **Answer:** Just with one change (removal of '!'), the code works.  
 
-+ ### Question: 2
+### Question: 2
 ```{r R Basics_Q2, warning=FALSE, message=FALSE}
 # this is a charactor vector
 my_string <- c('has', 'an', 'error', 'in', 'it')
 my_string
 ```
-+ ### Question: 3
+### Question: 3
 ```{r R Basics_Q3, warning=FALSE, message=FALSE}
 my_vector <- c(1, 2, '3', '4', 5)
 my_vector
@@ -65,14 +65,14 @@ my_vector
 **Answer:** This is a numeric vector and with or without the single or double quotes, vactor takes values.  
 
 ## Data import/export
-+ ### Question: 1
+### Question: 1
 ```{r R Data import/export_Q1, warning=FALSE, message=FALSE}
 # Download and import the file rail_trail.txt
 rail_trail.txt <- read.delim("/Users/skanutal/Documents/Santosh/Learning/Berkeley/rail_trail.txt", sep="|")
 #glimpse the data from txt file
 glimpse(rail_trail.txt)
 ```
-+ ### Question: 2
+### Question: 2
 ```{r R Data import/export_Q2, warning=FALSE, message=FALSE}
 # Export the .txt file as csv into a different location
 rail_trail_csv <- write_delim(
