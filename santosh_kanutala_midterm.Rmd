@@ -90,9 +90,10 @@ glimpse(rail_trail_csv_final)
 + ### Question: 1
 **Answer:**  
 \setlength{\leftskip}{2cm}
-+   Both the categories age group and gender are plotted on same axis, which is confusing at a first glanse.  
-+   There is no clear comparision visible between the age groups and with in the genders becase it shows the individual   elemennts are compared against the responses only.  
-+   The graph elements are not sorted properly.  
+Both the categories age group and gender are plotted on same axis, which is confusing at a first glanse.  
+There is no clear comparision visible between the age groups and with in the genders becase it shows the individual   elemennts are compared against the responses only.  
+The graph elements are not sorted properly.  
+\setlength{\leftskip}{0pt}
 
 + ### Question: 2
 ```{r}
