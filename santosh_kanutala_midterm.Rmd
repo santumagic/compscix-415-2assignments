@@ -88,9 +88,11 @@ glimpse(rail_trail_csv_final)
 
 ## Visualization
 + ### Question: 1
-```{r}
+**Answer:**  
+++  Both the categories age group and gender are plotted on same axis, which is confusing at a first glanse.  
+++  There is no clear comparision visible between the age groups and with in the genders becase it shows the individual   elemennts are compared against the responses only.  
+++  The graph elements are not sorted properly.  
 
-```
 + ### Question: 2
 ```{r}
 
