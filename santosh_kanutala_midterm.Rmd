@@ -65,10 +65,27 @@ my_vector
 **Answer:** This is a numeric vector and with or without the single or double quotes, vactor takes values.  
 
 ## Data import/export
++ ### Question: 1
+```{r R Data import/export_Q1, warning=FALSE, message=FALSE}
+# Download and import the file rail_trail.txt
+rail_trail.txt <- read.delim("/Users/skanutal/Documents/Santosh/Learning/Berkeley/rail_trail.txt", sep="|")
+#glimpse the data from txt file
+glimpse(rail_trail.txt)
+```
++ ### Question: 2
+```{r R Data import/export_Q2, warning=FALSE, message=FALSE}
+# Export the .txt file as csv into a different location
+rail_trail_csv <- write_delim(
+  rail_trail.txt, delim = '|',path = "/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/rail_trail.csv"
+  )
+# Load the newly created csv file
+rail_trail_csv_final <- read.csv(
+  "/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/rail_trail.csv", sep="|"
+  )
+# glimpse the data from the final csv file
+glimpse(rail_trail_csv_final)
+```
 
-### Question: 1
-
-### Question: 2
 
 ## Visualization
 

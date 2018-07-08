@@ -159,10 +159,7 @@ $(document).ready(function () {
 <li><a href="#rstudio-and-r-markdown">RStudio and R Markdown</a></li>
 <li><a href="#the-tidyverse-packages">The tidyverse packages</a></li>
 <li><a href="#r-basics">R Basics</a></li>
-<li><a href="#data-importexport">Data import/export</a><ul>
-<li><a href="#question-1-3">Question: 1</a></li>
-<li><a href="#question-2-2">Question: 2</a></li>
-</ul></li>
+<li><a href="#data-importexport">Data import/export</a></li>
 <li><a href="#visualization">Visualization</a><ul>
 <li><a href="#question-1-4">Question: 1</a></li>
 <li><a href="#question-2-3">Question: 2</a></li>
@@ -239,12 +236,50 @@ my_vector</code></pre></div>
 </div>
 <div id="data-importexport" class="section level2">
 <h2>Data import/export</h2>
-<div id="question-1-3" class="section level3">
-<h3>Question: 1</h3>
-</div>
-<div id="question-2-2" class="section level3">
-<h3>Question: 2</h3>
-</div>
+<ul>
+<li><h3 id="question-1-3">Question: 1</h3></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Download and import the file rail_trail.txt</span>
+rail_trail.txt &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;/Users/skanutal/Documents/Santosh/Learning/Berkeley/rail_trail.txt&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;|&quot;</span>)
+<span class="co">#glimpse the data from txt file</span>
+<span class="kw">glimpse</span>(rail_trail.txt)</code></pre></div>
+<pre><code>## Observations: 90
+## Variables: 10
+## $ hightemp   &lt;int&gt; 83, 73, 74, 95, 44, 69, 66, 66, 80, 79, 78, 65, 41,...
+## $ lowtemp    &lt;int&gt; 50, 49, 52, 61, 52, 54, 39, 38, 55, 45, 55, 48, 49,...
+## $ avgtemp    &lt;dbl&gt; 66.5, 61.0, 63.0, 78.0, 48.0, 61.5, 52.5, 52.0, 67....
+## $ spring     &lt;int&gt; 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, ...
+## $ summer     &lt;int&gt; 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, ...
+## $ fall       &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, ...
+## $ cloudcover &lt;dbl&gt; 7.6, 6.3, 7.5, 2.6, 10.0, 6.6, 2.4, 0.0, 3.8, 4.1, ...
+## $ precip     &lt;dbl&gt; 0.00, 0.29, 0.32, 0.00, 0.14, 0.02, 0.00, 0.00, 0.0...
+## $ volume     &lt;int&gt; 501, 419, 397, 385, 200, 375, 417, 629, 533, 547, 4...
+## $ weekday    &lt;int&gt; 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, ...</code></pre>
+<ul>
+<li><h3 id="question-2-2">Question: 2</h3></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Export the .txt file as csv into a different location</span>
+rail_trail_csv &lt;-<span class="st"> </span><span class="kw">write_delim</span>(
+  rail_trail.txt, <span class="dt">delim =</span> <span class="st">'|'</span>,<span class="dt">path =</span> <span class="st">&quot;/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/rail_trail.csv&quot;</span>
+  )
+<span class="co"># Load the newly created csv file</span>
+rail_trail_csv_final &lt;-<span class="st"> </span><span class="kw">read.csv</span>(
+  <span class="st">&quot;/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/rail_trail.csv&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;|&quot;</span>
+  )
+<span class="co"># glimpse the data from the final csv file</span>
+<span class="kw">glimpse</span>(rail_trail_csv_final)</code></pre></div>
+<pre><code>## Observations: 90
+## Variables: 10
+## $ hightemp   &lt;int&gt; 83, 73, 74, 95, 44, 69, 66, 66, 80, 79, 78, 65, 41,...
+## $ lowtemp    &lt;int&gt; 50, 49, 52, 61, 52, 54, 39, 38, 55, 45, 55, 48, 49,...
+## $ avgtemp    &lt;dbl&gt; 66.5, 61.0, 63.0, 78.0, 48.0, 61.5, 52.5, 52.0, 67....
+## $ spring     &lt;int&gt; 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, ...
+## $ summer     &lt;int&gt; 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, ...
+## $ fall       &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, ...
+## $ cloudcover &lt;dbl&gt; 7.6, 6.3, 7.5, 2.6, 10.0, 6.6, 2.4, 0.0, 3.8, 4.1, ...
+## $ precip     &lt;dbl&gt; 0.00, 0.29, 0.32, 0.00, 0.14, 0.02, 0.00, 0.00, 0.0...
+## $ volume     &lt;int&gt; 501, 419, 397, 385, 200, 375, 417, 629, 533, 547, 4...
+## $ weekday    &lt;int&gt; 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, ...</code></pre>
 </div>
 <div id="visualization" class="section level2">
 <h2>Visualization</h2>
