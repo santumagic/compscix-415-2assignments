@@ -87,25 +87,23 @@ glimpse(rail_trail_csv_final)
 ```
 
 ## Visualization
-+ ### Question: 1
+### Question: 1
 **Answer:**  
-
    1. Both the categories age group and gender are plotted on same axis, which is confusing at a first glanse.  
    2. There is no clear comparision visible between the age groups and with in the genders becase it shows the individual   elemennts are compared against the responses only.  
    3. The graph elements are not sorted properly.  
 
-+ ### Question: 2
-```{r}
+### Question: 2
+```{r R Visualization_Q2, warning=FALSE, message=FALSE, fig.align='center'}
 # Reproduce the given graph
 ggplot(data = diamonds, mapping = aes(x = cut, y = carat, fill = color)) + 
   geom_boxplot (position = "identity") +
   coord_flip() + 
   labs(x = "CUT OF DIAMOND", y = "CARAT OF DIAMOND")
-fig.align = 'center'
 ```
 
-+ ### Question: 3
-```{r}
+### Question: 3
+```{r R Visualization_Q3, warning=FALSE, message=FALSE, fig.align='center'}
 # Enhancing the graph by changing the position to "dodge"
 ggplot(data = diamonds, mapping = aes(x = cut, y = carat, fill = color)) + 
   geom_boxplot (position = "dodge") +
@@ -115,6 +113,7 @@ ggplot(data = diamonds, mapping = aes(x = cut, y = carat, fill = color)) +
 
 **Explanation:**
   By using position = "dodge", we can compare the individual values side by side.
+
 ## Data munging and wrangling
 
 ### Question: 1
