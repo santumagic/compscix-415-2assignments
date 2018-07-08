@@ -3,16 +3,16 @@ title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
 date: "7/6/2018"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -115,8 +115,10 @@ ggplot(data = diamonds, mapping = aes(x = cut, y = carat, fill = color)) +
   By using position = "dodge", we can compare the individual values side by side.
 
 ## Data munging and wrangling
-
 ### Question: 1
+```{r R munging and wrangling_Q1, warning=FALSE, message=FALSE}
+is.tibble(table2)
+```
 
 ### Question: 2
 
