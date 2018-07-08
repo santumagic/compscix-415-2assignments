@@ -3,16 +3,16 @@ title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
 date: "7/6/2018"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -86,15 +86,19 @@ rail_trail_csv_final <- read.csv(
 glimpse(rail_trail_csv_final)
 ```
 
-
 ## Visualization
++ ### Question: 1
+```{r}
 
-### Question: 1
+```
++ ### Question: 2
+```{r}
 
-### Question: 2
+```
++ ### Question: 3
+```{r}
 
-### Question: 3
-
+```
 ## Data munging and wrangling
 
 ### Question: 1
