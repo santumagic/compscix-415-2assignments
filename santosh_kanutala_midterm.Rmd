@@ -96,7 +96,16 @@ glimpse(rail_trail_csv_final)
 
 + ### Question: 2
 ```{r}
-
+# Reproduce the given graph
+ggplot(data = diamonds, mapping = aes(x = cut, y = carat, fill = color)) + 
+  geom_boxplot (position = "identity") +
+  coord_flip() + 
+  labs(x = "CUT OF DIAMOND", y = "CARAT OF DIAMOND")
+# Enhancing the graph by changing a thing
+ggplot(data = diamonds, mapping = aes(x = cut, y = carat, fill = color)) + 
+  geom_boxplot (position = "identity") +
+  coord_flip()
+  #labs(x = "CUT OF DIAMOND", y = "CARAT OF DIAMOND")
 ```
 + ### Question: 3
 ```{r}
