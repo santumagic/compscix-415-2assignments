@@ -3,16 +3,16 @@ title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
 date: "7/6/2018"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -119,9 +119,10 @@ ggplot(data = diamonds, mapping = aes(x = cut, y = carat, fill = color)) +
 ```{r R munging and wrangling_Q1, warning=FALSE, message=FALSE}
 # Finding the dataset tidy or not
 table2
-# It is not tidy, so below code makes it tidy
-
-
+# It is not a tidy data, so below code makes it a tidy dataset
+table2_tidy <- spread(table2, type, count)
+# Display table2 in tidy way
+table2_tidy
 ```
 
 ### Question: 2

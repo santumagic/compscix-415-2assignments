@@ -345,7 +345,19 @@ table2</code></pre></div>
 ## 10 China        1999 population 1272915272
 ## 11 China        2000 cases          213766
 ## 12 China        2000 population 1280428583</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># It is not tidy, so below code makes it tidy</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># It is not a tidy data, so below code makes it a tidy dataset</span>
+table2_tidy &lt;-<span class="st"> </span><span class="kw">spread</span>(table2, type, count)
+<span class="co"># Display table2 in tidy way</span>
+table2_tidy</code></pre></div>
+<pre><code>## # A tibble: 6 x 4
+##   country      year  cases population
+##   &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;      &lt;int&gt;
+## 1 Afghanistan  1999    745   19987071
+## 2 Afghanistan  2000   2666   20595360
+## 3 Brazil       1999  37737  172006362
+## 4 Brazil       2000  80488  174504898
+## 5 China        1999 212258 1272915272
+## 6 China        2000 213766 1280428583</code></pre>
 </div>
 <div id="question-2-4" class="section level3">
 <h3>Question: 2</h3>
