@@ -126,11 +126,19 @@ table2_tidy
 ```
 
 ### Question: 2
-```{r}
-
+```{r R munging and wrangling_Q2, warning=FALSE, message=FALSE}
+# modify the diamonds dataset by adding an additional column
+enhanced_diamonds <- diamonds %>% mutate(price_per_carat = price / carat)
 ```
 
 ### Question: 3
+```{r R munging and wrangling_Q3, warning=FALSE, message=FALSE}
+# diamonds
+
+```
+
+
+
 
 ## EDA
 
