@@ -133,7 +133,8 @@ enhanced_diamonds <- diamonds %>% mutate(price_per_carat = price / carat)
 
 ### Question: 3
 ```{r R munging and wrangling_Q3, warning=FALSE, message=FALSE}
-# diamonds
+diamonds %>% 
+  filter(price > 10000 & carat < 1.5)
 
 ```
 
