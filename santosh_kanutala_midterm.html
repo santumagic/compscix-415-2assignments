@@ -214,8 +214,7 @@ $(document).ready(function () {
 <div id="question-1-1" class="section level3">
 <h3>Question: 1</h3>
 <p>Plotting - <strong>ggplot2</strong><br />
-Data munging/wrangling - <strong>dplyr</strong> and <strong>tidyr</strong><br />
-Reshaping (speading and gathering) data - <strong>tidyr</strong><br />
+Data munging/wrangling - <strong>dplyr</strong> Reshaping (speading and gathering) data - <strong>tidyr</strong><br />
 Importing/exporting data - <strong>readr</strong></p>
 </div>
 <div id="question-2" class="section level3">
@@ -230,7 +229,9 @@ Importing/exporting data - <strong>read_csv()</strong> and <strong>read_delim()<
 <h2>R Basics</h2>
 <div id="question-1-2" class="section level3">
 <h3>Question: 1</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">My_data.name___is.too00ooLong &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">2</span> , <span class="dv">3</span> )</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">My_data.name___is.too00ooLong &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">2</span> , <span class="dv">3</span> )
+My_data.name___is.too00ooLong</code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
 <p><strong>Answer:</strong> Just with one change (removal of ‘!’), the code works.</p>
 </div>
 <div id="question-2-1" class="section level3">
@@ -245,7 +246,7 @@ my_string</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">'3'</span>, <span class="st">'4'</span>, <span class="dv">5</span>)
 my_vector</code></pre></div>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot;</code></pre>
-<p><strong>Answer:</strong> This is a numeric vector and with or without the single or double quotes, vactor takes values.</p>
+<p><strong>Answer:</strong> This is a numeric vector and with or without the single or double quotes, vector takes values.</p>
 </div>
 </div>
 <div id="data-importexport" class="section level2">
@@ -301,8 +302,8 @@ rail_trail_csv_final &lt;-<span class="st"> </span><span class="kw">read.csv</sp
 <h3>Question: 1</h3>
 <p><strong>Answer:</strong><br />
 1. Both the categories age group and gender are plotted on same axis, which is confusing at a first glanse.<br />
-2. There is no clear comparision visible between the age groups and with in the genders becase it shows the individual elemennts are compared against the responses only.<br />
-3. The graph elements are not sorted properly.</p>
+2. These are two seperate charts, but they look like one. The first chart is a chart with three ranges (&lt;45, 45 to 64, and &gt;64), the second chart is a men vs women chart. This simple difference is not easily visible with how it is layed out currently.<br />
+3. With the way the data is currently layed out it is not clear that yes/no data points are proportions and the title should visually be represented.</p>
 </div>
 <div id="question-2-3" class="section level3">
 <h3>Question: 2</h3>
@@ -358,6 +359,7 @@ table2_tidy</code></pre></div>
 ## 4 Brazil       2000  80488  174504898
 ## 5 China        1999 212258 1272915272
 ## 6 China        2000 213766 1280428583</code></pre>
+<p><strong>Answer:</strong> To make this data tidy, there needs to be one observation per row, which we can achieve with a “spread”.</p>
 </div>
 <div id="question-2-4" class="section level3">
 <h3>Question: 2</h3>
@@ -366,7 +368,40 @@ enhanced_diamonds &lt;-<span class="st"> </span>diamonds <span class="op">%&gt;%
 </div>
 <div id="question-3-2" class="section level3">
 <h3>Question: 3</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># diamonds</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># finding the number of diamonds with price &gt; 10000 and carat &lt;1.5</span>
+diamond_target &lt;-<span class="st"> </span>diamonds <span class="op">%&gt;%</span>
+<span class="kw">mutate</span> (<span class="dt">target_segment =</span> (price <span class="op">&gt;</span><span class="st"> </span><span class="dv">10000</span> <span class="op">&amp;</span><span class="st"> </span>carat <span class="op">&lt;</span><span class="st"> </span><span class="fl">1.5</span>)) <span class="op">%&gt;%</span>
+<span class="kw">group_by</span>(cut)
+<span class="co"># finding the proportion  </span>
+diamond_target <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">target_propotion =</span> (<span class="kw">sum</span>(target_segment)<span class="op">/</span><span class="kw">length</span>(target_segment))<span class="op">*</span><span class="dv">100</span>,
+<span class="dt">target_count =</span> <span class="kw">sum</span>(target_segment))</code></pre></div>
+<pre><code>## # A tibble: 5 x 3
+##   cut       target_propotion target_count
+##   &lt;ord&gt;                &lt;dbl&gt;        &lt;int&gt;
+## 1 Fair                 0.248            4
+## 2 Good                 0.347           17
+## 3 Very Good            1.28           155
+## 4 Premium              1.25           173
+## 5 Ideal                2.25           485</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># discplay the final dataset</span>
+diamond_target</code></pre></div>
+<pre><code>## # A tibble: 53,940 x 11
+## # Groups:   cut [5]
+##    carat cut       color clarity depth table price     x     y     z
+##    &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 0.23  Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+##  2 0.21  Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+##  3 0.23  Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+##  4 0.290 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+##  5 0.31  Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+##  6 0.24  Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48
+##  7 0.24  Very Good I     VVS1     62.3    57   336  3.95  3.98  2.47
+##  8 0.26  Very Good H     SI1      61.9    55   337  4.07  4.11  2.53
+##  9 0.22  Fair      E     VS2      65.1    61   337  3.87  3.78  2.49
+## 10 0.23  Very Good H     VS1      59.4    61   338  4     4.05  2.39
+## # ... with 53,930 more rows, and 1 more variable: target_segment &lt;lgl&gt;</code></pre>
+<p><strong>Answer:</strong> As seen in the above dataset there are 485 ideal diamonds, and they comprise 2.25% of all ideal diamonds. This makes sense, since as the diamond is more ideal, small diamonds are more expensive. Similarly, most fair diamonds won’t have the same price as any of the others. It is interesting that very-good and premium diamonds are the same. Which implies that we are missing some other parameter, likely clarity, colour or some such variable</p>
 </div>
 </div>
 <div id="eda" class="section level2">
