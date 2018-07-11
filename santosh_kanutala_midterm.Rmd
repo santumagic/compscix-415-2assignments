@@ -175,6 +175,12 @@ count(total_cities)
 There are 46 unique cities in the dataset.
 
 ### Question: 3
+```{r}
+# arrange the volumes in descending order and find the top city
+txhousing %>% arrange(desc(volume))
+```
+**Answer:**  
+From the above dataset, Houston, in July/2015 had sales volume of $ 2.568 B.
 
 ### Question: 4
 
