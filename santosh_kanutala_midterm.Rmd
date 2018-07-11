@@ -209,6 +209,9 @@ arrange(desc(proportion))
 txhousing %>% group_by(sales < 500) %>% 
 # summarise the result
   summarise(sum(volume))
+
+txhousing %>% group_by(sales < 500) %>% summarise(sum(volume))
+
 ```
 
 ```{r EDA_Q6.2, warning=FALSE, message=FALSE}
