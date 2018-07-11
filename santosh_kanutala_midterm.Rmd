@@ -34,7 +34,7 @@ library(nycflights13)
 ## The tidyverse packages
 ### Question: 1
 Plotting - **ggplot2**  
-Data munging/wrangling - **dplyr** and **tidyr**  
+Data munging/wrangling - **dplyr** 
 Reshaping (speading and gathering) data - **tidyr**  
 Importing/exporting data - **readr**  
 
@@ -48,6 +48,7 @@ Importing/exporting data - **read_csv()** and **read_delim()**
 ### Question: 1
 ```{r R Basics_Q1, warning=FALSE, message=FALSE}
 My_data.name___is.too00ooLong <- c( 1 , 2 , 3 )
+My_data.name___is.too00ooLong
 ```
 **Answer:** Just with one change (removal of '!'), the code works.  
 
@@ -62,7 +63,7 @@ my_string
 my_vector <- c(1, 2, '3', '4', 5)
 my_vector
 ```
-**Answer:** This is a numeric vector and with or without the single or double quotes, vactor takes values.  
+**Answer:** This is a numeric vector and with or without the single or double quotes, vector takes values.  
 
 ## Data import/export
 ### Question: 1
@@ -90,8 +91,10 @@ glimpse(rail_trail_csv_final)
 ### Question: 1
 **Answer:**  
    1. Both the categories age group and gender are plotted on same axis, which is confusing at a first glanse.  
-   2. There is no clear comparision visible between the age groups and with in the genders becase it shows the individual   elemennts are compared against the responses only.  
-   3. The graph elements are not sorted properly.  
+   2. These are two seperate charts, but they look like one. The first chart is a chart with three ranges (<45,
+      45 to 64, and >64), the second chart is a men vs women chart. This simple difference is not easily
+      visible with how it is layed out currently.  
+   3. With the way the data is currently layed out it is not clear that yes/no data points are proportions and the title should       visually be represented.  
 
 ### Question: 2
 ```{r R Visualization_Q2, warning=FALSE, message=FALSE, fig.align='center'}
@@ -134,10 +137,14 @@ enhanced_diamonds <- diamonds %>% mutate(price_per_carat = price / carat)
 ### Question: 3
 ```{r R munging and wrangling_Q3, warning=FALSE, message=FALSE}
 diamonds %>% 
-  filter(price > 10000 & carat < 1.5)
+  filter(diamonds, price > 10000, carat < 1.5)
 
 ```
 
+```{r}
+
+filter(diamonds, price > 10000, carat < 1.5)
+```
 
 
 
