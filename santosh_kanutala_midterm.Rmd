@@ -166,6 +166,13 @@ txhousing %>% select(year,month) %>% arrange(desc(year), desc(month))
 The data is from Jan 2000 to July 2015
 
 ### Question: 2
+```{r R EDA_Q2, warning=FALSE, message=FALSE}
+# total number of cities in the dataset
+total_cities <- txhousing %>% select(city) %>% unique()
+count(total_cities)
+```
+**Answer:**  
+There are 46 unique cities in the dataset.
 
 ### Question: 3
 

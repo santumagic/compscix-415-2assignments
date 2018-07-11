@@ -429,6 +429,15 @@ The data is from Jan 2000 to July 2015</p>
 </div>
 <div id="question-2-5" class="section level3">
 <h3>Question: 2</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of cities in the dataset</span>
+total_cities &lt;-<span class="st"> </span>txhousing <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(city) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unique</span>()
+<span class="kw">count</span>(total_cities)</code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##       n
+##   &lt;int&gt;
+## 1    46</code></pre>
+<p><strong>Answer:</strong><br />
+There are 46 unique cities in the dataset.</p>
 </div>
 <div id="question-3-3" class="section level3">
 <h3>Question: 3</h3>
