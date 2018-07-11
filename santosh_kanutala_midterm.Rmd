@@ -3,16 +3,16 @@ title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
 date: "7/6/2018"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -175,7 +175,7 @@ count(total_cities)
 There are 46 unique cities in the dataset.
 
 ### Question: 3
-```{r}
+```{r EDA_Q3, warning=FALSE, message=FALSE}
 # arrange the volumes in descending order and find the top city
 txhousing %>% arrange(desc(volume))
 ```
@@ -183,10 +183,41 @@ txhousing %>% arrange(desc(volume))
 From the above dataset, Houston, in July/2015 had sales volume of $ 2.568 B.
 
 ### Question: 4
+```{r EDA_Q4, warning=FALSE, message=FALSE}
+# plotting the relation between listings and sales
+ggplot(data = txhousing,mapping = aes(x=listings, y = sales)) +
+geom_point() +
+geom_smooth()
+```
+**Answer:**  
+From the above plot, we can assume that the sales are incresing along with the number of listings.
 
 ### Question: 5
-
+```{r EDA_Q5, warning=FALSE, message=FALSE}
+# finding the cities with valid sales
+valid_cities <- txhousing %>%
+mutate(valid_sales = !is.na(sales)) %>%
+group_by(city)
+# finding the proportions
+proportions <- valid_cities %>%
+summarize(proportion = round(1 - sum(valid_sales)/length(valid_sales),2)) %>%
+arrange(desc(proportion))
+```
 ### Question: 6
+```{r EDA_Q6.1, warning=FALSE, message=FALSE}
+# citities with greater than 500 sales 
+txhousing %>% group_by(sales < 500) %>% 
+# summarise the result
+  summarise(sum(volume))
+```
+
+```{r EDA_Q6.2, warning=FALSE, message=FALSE}
+
+```
+
+```{r EDA_Q6.3, warning=FALSE, message=FALSE}
+
+```
 
 ## Git and Github
 
