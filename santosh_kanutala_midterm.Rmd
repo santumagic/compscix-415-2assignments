@@ -156,6 +156,14 @@ diamonds won’t have the same price as any of the others. It is interesting tha
 ## EDA
 
 ### Question: 1
+```{r R EDA_Q1, warning=FALSE, message=FALSE}
+# Select year and month from the dataset with default sorting order
+txhousing %>% select(year,month)
+#Select year and month from the dataset and finding the maximum year and month
+txhousing %>% select(year,month) %>% arrange(desc(year), desc(month))
+```
+**Answer:**  
+The data is from Jan 2000 to July 2015
 
 ### Question: 2
 
