@@ -127,6 +127,8 @@ table2_tidy <- spread(table2, type, count)
 # Display table2 in tidy way
 table2_tidy
 ```
+**Answer:**
+To make this data tidy, there needs to be one observation per row, which we can achieve with a “spread”.
 
 ### Question: 2
 ```{r R munging and wrangling_Q2, warning=FALSE, message=FALSE}
