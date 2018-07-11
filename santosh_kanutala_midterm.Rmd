@@ -206,7 +206,7 @@ arrange(desc(proportion))
 ### Question: 6
 ```{r EDA_Q6.1, warning=FALSE, message=FALSE}
 # citities with greater than 500 sales 
-txhousing %>% group_by(sales < 500) %>% 
+txhousing %>% group_by(sales < 500)
 # summarise the result
   summarise(sum(volume))
 
