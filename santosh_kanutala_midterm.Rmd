@@ -138,16 +138,21 @@ enhanced_diamonds <- diamonds %>% mutate(price_per_carat = price / carat)
 
 ### Question: 3
 ```{r R munging and wrangling_Q3, warning=FALSE, message=FALSE}
-diamonds %>% 
-  filter(diamonds, price > 10000, carat < 1.5)
-
+# finding the number of diamonds with price > 10000 and carat <1.5
+diamond_target <- diamonds %>%
+mutate (target_segment = (price > 10000 & carat < 1.5)) %>%
+group_by(cut)
+# finding the proportion  
+diamond_target %>%
+  summarise(target_propotion = (sum(target_segment)/length(target_segment))*100,
+target_count = sum(target_segment))
+# discplay the final dataset
+diamond_target
 ```
-
-```{r}
-
-filter(diamonds, price > 10000, carat < 1.5)
-```
-
+**Answer:**
+As seen in the above dataset there are 485 ideal diamonds, and they comprise 2.25% of all ideal diamonds.
+This makes sense, since as the diamond is more ideal, small diamonds are more expensive. Similarly, most fair
+diamonds won’t have the same price as any of the others. It is interesting that very-good and premium diamonds are the same. Which implies that we are missing some other parameter, likely clarity, colour or some such variable
 
 
 ## EDA
