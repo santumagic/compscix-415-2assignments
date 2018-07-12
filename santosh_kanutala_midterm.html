@@ -513,18 +513,6 @@ proportions_cities <span class="co"># city proportions</span></code></pre></div>
 </div>
 <div id="question-6" class="section level3">
 <h3>Question: 6</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># citities with greater than 500 sales </span>
-cities500 &lt;-<span class="st"> </span>txhousing <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sales <span class="op">&lt;</span><span class="st"> </span><span class="dv">500</span>)
-<span class="co"># summarise the result</span>
-  <span class="co">#summarise(sum(volume))</span>
-
-txhousing <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sales <span class="op">&lt;</span><span class="st"> </span><span class="dv">500</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">sum</span>(volume))</code></pre></div>
-<pre><code>## # A tibble: 3 x 2
-##   `sales &lt; 500` `sum(volume)`
-##   &lt;lgl&gt;                 &lt;dbl&gt;
-## 1 FALSE          719783334758
-## 2 TRUE           138718824595
-## 3 NA                       NA</code></pre>
 </div>
 </div>
 <div id="git-and-github" class="section level2">
