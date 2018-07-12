@@ -493,22 +493,22 @@ valid_cities <span class="co"># show valid cities</span></code></pre></div>
 ## # ... with 8,592 more rows, and 1 more variable: valid_sales &lt;lgl&gt;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># finding the proportions</span>
 proportions_cities &lt;-<span class="st"> </span>valid_cities <span class="op">%&gt;%</span>
-<span class="kw">summarize</span>(<span class="dt">proportion =</span> <span class="kw">round</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">sum</span>(valid_sales)<span class="op">/</span><span class="kw">length</span>(valid_sales),<span class="dv">2</span>)) <span class="op">%&gt;%</span>
+<span class="kw">summarize</span>(<span class="dt">proportion =</span> <span class="kw">round</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">sum</span>(valid_sales)<span class="op">/</span><span class="kw">length</span>(valid_sales),<span class="dv">4</span>)) <span class="op">%&gt;%</span>
 <span class="kw">arrange</span>(<span class="kw">desc</span>(proportion))
 proportions_cities <span class="co"># city proportions</span></code></pre></div>
 <pre><code>## # A tibble: 46 x 2
 ##    city               proportion
 ##    &lt;chr&gt;                   &lt;dbl&gt;
-##  1 South Padre Island       0.62
-##  2 Kerrville                0.56
-##  3 Midland                  0.4 
-##  4 Odessa                   0.39
-##  5 San Marcos               0.25
-##  6 Laredo                   0.19
-##  7 Harlingen                0.13
-##  8 Waco                     0.1 
-##  9 Texarkana                0.09
-## 10 Brazoria County          0.07
+##  1 South Padre Island     0.620 
+##  2 Kerrville              0.556 
+##  3 Midland                0.401 
+##  4 Odessa                 0.385 
+##  5 San Marcos             0.246 
+##  6 Laredo                 0.192 
+##  7 Harlingen              0.134 
+##  8 Waco                   0.102 
+##  9 Texarkana              0.0909
+## 10 Brazoria County        0.0749
 ## # ... with 36 more rows</code></pre>
 </div>
 <div id="question-6" class="section level3">
