@@ -206,6 +206,9 @@ arrange(desc(proportion))
 proportions_cities # city proportions
 ```
 ### Question: 6
+
+Are the distributions of the median sales price (column name median), when grouped by city, different? The same? Show your work.
+
 ```{r EDA_Q6.1, warning=FALSE, message=FALSE}
 # cities above 500 summarise by volume
 txhousing %>% group_by(sales > 500) 
