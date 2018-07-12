@@ -208,7 +208,7 @@ proportions_cities # city proportions
 ### Question: 6
 
 Are the distributions of the median sales price (column name median), when grouped by city, different? The same? Show your work.
-
+  
 ```{r EDA_Q6.1, warning=FALSE, message=FALSE}
 # cities above 500 summarise by volume
 txhousing %>% group_by(sales > 500) 
@@ -225,7 +225,9 @@ ggplot(data = cities_above500, mapping = aes(x = reorder(city,median,mean), y = 
 From the graph above interestingly we can observe that the median price is higher compared to other cities  
 San Antonio  
 El Paso  
-Austin
+Austin  
+
+Any cities that stand out that you’d want to investigate further?  
 
 ```{r EDA_Q6.2, warning=FALSE, message=FALSE}
 cities_above500_outliers <- txhousing %>% filter(sales > 500)
@@ -239,14 +241,17 @@ ggplot(data = cities_above500, mapping = aes(x = reorder(city,median,mean), y = 
 By the above plaot we can conclude that the following cities with lots of outliers needs to be investigated.  
 Denton County  
 Dallas  
-Houston
+Houston  
+
+Why might we want to filter out all cities and months with sales less than 500?
 
 ```{r EDA_Q6.3, warning=FALSE, message=FALSE}
 
 ```
+**Answer:** 
 
 ## Git and Github
-
+**Answer:** Git hub location is added in the front page of this document
 
 
 
