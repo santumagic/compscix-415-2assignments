@@ -207,12 +207,36 @@ proportions_cities # city proportions
 ```
 ### Question: 6
 ```{r EDA_Q6.1, warning=FALSE, message=FALSE}
+# cities above 500 summarise by volume
+txhousing %>% group_by(sales > 500) 
 
+# cities above 500 distributions
+cities_above500 <- txhousing %>% filter(sales > 500)
+ggplot(data = cities_above500, mapping = aes(x = reorder(city,median,mean), y = median)) +
+  geom_boxplot() +
+  labs(x = 'Cities', y = 'Median Sale Price') + 
+  coord_flip() + 
+  theme_dark()
 ```
+**Answer:** 
+From the graph above interestingly we can observe that the median price is higher compared to other cities  
+San Antonio  
+El Paso  
+Austin
 
 ```{r EDA_Q6.2, warning=FALSE, message=FALSE}
-
+cities_above500_outliers <- txhousing %>% filter(sales > 500)
+ggplot(data = cities_above500, mapping = aes(x = reorder(city,median,mean), y = median)) +
+  geom_boxplot() +
+  labs(x = 'Cities', y = 'Median Sale Price') + 
+  coord_flip() + 
+  theme_bw()
 ```
+**Answer:** 
+By the above plaot we can conclude that the following cities with lots of outliers needs to be investigated.  
+Denton County  
+Dallas  
+Houston
 
 ```{r EDA_Q6.3, warning=FALSE, message=FALSE}
 
