@@ -209,10 +209,11 @@ proportions_cities # city proportions
 ```{r EDA_Q6.1, warning=FALSE, message=FALSE}
 # citities with greater than 500 sales 
 cities500 <- txhousing %>% group_by(sales < 500)
+cities500
 # summarise the result
   #summarise(sum(volume))
 
-txhousing %>% group_by(sales < 500) %>% summarise(sum(volume))
+txhousing %>% group_by(sales > 500) %>% summarise(sum(volume))
 
 ```
 
