@@ -3,16 +3,16 @@ title: "COMPSCIX 415.2 Homework 5/Midterm"
 author: "Santosh Kanutala"
 date: "7/6/2018"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -198,17 +198,19 @@ From the above plot, we can assume that the sales are incresing along with the n
 valid_cities <- txhousing %>%
 mutate(valid_sales = !is.na(sales)) %>%
 group_by(city)
+valid_cities # show valid cities
 # finding the proportions
-proportions <- valid_cities %>%
+proportions_cities <- valid_cities %>%
 summarize(proportion = round(1 - sum(valid_sales)/length(valid_sales),2)) %>%
 arrange(desc(proportion))
+proportions_cities # city proportions
 ```
 ### Question: 6
 ```{r EDA_Q6.1, warning=FALSE, message=FALSE}
 # citities with greater than 500 sales 
 cities500 <- txhousing %>% group_by(sales < 500)
 # summarise the result
-  summarise(sum(volume))
+  #summarise(sum(volume))
 
 txhousing %>% group_by(sales < 500) %>% summarise(sum(volume))
 
