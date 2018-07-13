@@ -554,6 +554,15 @@ Denton County<br />
 Dallas<br />
 Houston</p>
 <p>Why might we want to filter out all cities and months with sales less than 500?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Let's take a look at cities below 500 sales</span>
+cities_below500 &lt;-<span class="st"> </span>txhousing <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sales <span class="op">&lt;</span><span class="st"> </span><span class="dv">500</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">n</span>())
+cities_below500</code></pre></div>
+<pre><code>## # A tibble: 3 x 2
+##   `sales &lt; 500` `n()`
+##   &lt;lgl&gt;         &lt;int&gt;
+## 1 FALSE          1889
+## 2 TRUE           6145
+## 3 NA              568</code></pre>
 <p><strong>Answer:</strong></p>
 </div>
 </div>
