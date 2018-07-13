@@ -1,28 +1,28 @@
 ---
-title: "COMPSCIX 415.2 Homework 5/Midterm"
-author: "Santosh Kanutala"
-date: "7/6/2018"
+title: \vspace{.5in}"__COMPSCIX 415.2 Homework 5/Midterm__"
+author: "__Santosh Kanutala__"
+date: "7/12/2018"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-## Github location
+\newpage
+## <u>Github location</u>
 My homework assignments can be found at   https://github.com/santumagic/compscix-415-2assignments.git
 
-## RStudio and R Markdown
+## <u>RStudio and R Markdown</u>
 ### Question: 1
 As part of this question, I have loaded the required packages and added instructions for table of contents etc in the YAML header.
 ```{r load_packages, message=FALSE, warning=FALSE}
@@ -31,10 +31,10 @@ library(tidyverse)
 library(mdsr)
 library(nycflights13)
 ```
-## The tidyverse packages
+## <u>The tidyverse packages</u>
 ### Question: 1
 Plotting - **ggplot2**  
-Data munging/wrangling - **dplyr** 
+Data munging/wrangling - **dplyr**  
 Reshaping (speading and gathering) data - **tidyr**  
 Importing/exporting data - **readr**  
 
@@ -44,7 +44,7 @@ Data munging/wrangling - **select()** and **filter()**
 Reshaping (speading and gathering) data - **separate()** and **extract()**  
 Importing/exporting data - **read_csv()** and **read_delim()**   
 
-## R Basics
+## <u>R Basics</u>
 ### Question: 1
 ```{r R Basics_Q1, warning=FALSE, message=FALSE}
 My_data.name___is.too00ooLong <- c( 1 , 2 , 3 )
@@ -65,7 +65,7 @@ my_vector
 ```
 **Answer:** This is a numeric vector and with or without the single or double quotes, vector takes values.  
 
-## Data import/export
+## <u>Data import/export</u>
 ### Question: 1
 ```{r R Data import/export_Q1, warning=FALSE, message=FALSE}
 # Download and import the file rail_trail.txt
@@ -87,7 +87,7 @@ rail_trail_csv_final <- read.csv(
 glimpse(rail_trail_csv_final)
 ```
 
-## Visualization
+## <u>Visualization</u>
 ### Question: 1
 **Answer:**  
    1. Both the categories age group and gender are plotted on same axis, which is confusing at a first glanse.  
@@ -117,7 +117,7 @@ ggplot(data = diamonds, mapping = aes(x = cut, y = carat, fill = color)) +
 **Explanation:**
   By using position = "dodge", we can compare the individual values side by side.
 
-## Data munging and wrangling
+## <u>Data munging and wrangling</u>
 ### Question: 1
 ```{r R munging and wrangling_Q1, warning=FALSE, message=FALSE}
 # Finding the dataset tidy or not
@@ -153,7 +153,7 @@ This makes sense, since as the diamond is more ideal, small diamonds are more ex
 diamonds won’t have the same price as any of the others. It is interesting that very-good and premium diamonds are the same. Which implies that we are missing some other parameter, likely clarity, colour or some such variable.
 
 
-## EDA
+## <u>EDA</u>
 
 ### Question: 1
 ```{r R EDA_Q1, warning=FALSE, message=FALSE}
@@ -189,6 +189,7 @@ ggplot(data = txhousing,mapping = aes(x=listings, y = sales)) +
 geom_point() +
 geom_smooth()
 ```
+
 **Answer:**  
 From the above plot, we can assume that the sales are incresing along with the number of listings.
 
@@ -219,13 +220,16 @@ ggplot(data = cities_above500, mapping = aes(x = reorder(city,median,mean), y = 
   geom_boxplot() +
   labs(x = 'Cities', y = 'Median Sale Price') + 
   coord_flip() + 
-  theme_dark()
+  theme_bw()
 ```
+
 **Answer:** 
-From the graph above interestingly we can observe that the median price is higher compared to other cities  
-San Antonio  
-El Paso  
-Austin  
+From the graph above interestingly we can observe that the median price is higher compared to other cities.  
+
++ San Antonio  
++ El Paso  
++ Austin  
+
 
 Any cities that stand out that you’d want to investigate further?  
 
@@ -237,24 +241,40 @@ ggplot(data = cities_above500, mapping = aes(x = reorder(city,median,mean), y = 
   coord_flip() + 
   theme_bw()
 ```
+
 **Answer:** 
-By the above plaot we can conclude that the following cities with lots of outliers needs to be investigated.  
-Denton County  
-Dallas  
-Houston  
+By the above plaot we can conclude that the following cities with lots of outliers needs to be investigated.
+
++ Denton County  
++ Dallas  
++ Houston  
 
 Why might we want to filter out all cities and months with sales less than 500?
 
 ```{r EDA_Q6.3, warning=FALSE, message=FALSE}
 # Let's take a look at cities below 500 sales
-cities_below500 <- txhousing %>% group_by(sales < 500) %>% summarise(n())
-cities_below500
+small_cities <- txhousing %>% filter (sales < 500)
+ggplot(data = small_cities, mapping = aes(x = reorder(city,median,mean), y = median)) +
+  geom_boxplot() +
+  labs(x = 'Cities', y = 'Median Sale Price') + 
+  coord_flip() + 
+  theme_bw()
 
+# Let's take a look at cities abvove 500 sales
+large_cities <- txhousing %>% filter (sales < 500)
+ggplot(data = large_cities, mapping = aes(x = reorder(city,median,mean), y = median)) +
+  geom_boxplot() +
+  labs(x = 'Cities', y = 'Median Sale Price') + 
+  coord_flip() + 
+  theme_bw()
 
 ```
-**Answer:** 
 
-## Git and Github
+**Answer:** 
+By looking at the above two box plot graph, it is clearly observed that the small cities with sales < 500 are high in number and they are just adding noise to the dataset.
+
+## <u>Git and Github</u>
+
 **Answer:** Git hub location is added in the front page of this document
 
 
