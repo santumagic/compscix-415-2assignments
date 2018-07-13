@@ -247,9 +247,9 @@ Why might we want to filter out all cities and months with sales less than 500?
 
 ```{r EDA_Q6.3, warning=FALSE, message=FALSE}
 # Let's take a look at cities below 500 sales
-cities_below500 <- txhousing %>% group_by(sales < 500) 
+cities_below500 <- txhousing %>% group_by(sales < 500) %>% summarise(n())
 cities_below500
-txhousing %>% group_by(sales < 500) %>% summarise(n())
+
 
 ```
 **Answer:** 
