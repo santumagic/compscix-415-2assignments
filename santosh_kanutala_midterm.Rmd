@@ -3,16 +3,16 @@ title: \vspace{.5in}"__COMPSCIX 415.2 Homework 5/Midterm__"
 author: "__Santosh Kanutala__"
 date: "7/12/2018"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -182,8 +182,9 @@ txhousing %>% arrange(desc(volume))
 **Answer:**  
 From the above dataset, Houston, in July/2015 had sales volume of $ 2.568 B.
 
+\newpage
 ### Question: 4
-```{r EDA_Q4, warning=FALSE, message=FALSE}
+```{r EDA_Q4, warning=FALSE, message=FALSE, fig.align='center'}
 # plotting the relation between listings and sales
 ggplot(data = txhousing,mapping = aes(x=listings, y = sales)) +
 geom_point() +
@@ -193,6 +194,7 @@ geom_smooth()
 **Answer:**  
 From the above plot, we can assume that the sales are incresing along with the number of listings.
 
+\newpage
 ### Question: 5
 ```{r EDA_Q5, warning=FALSE, message=FALSE}
 # finding the cities with valid sales
@@ -206,11 +208,13 @@ summarize(proportion = round(1 - sum(valid_sales)/length(valid_sales),4)) %>%
 arrange(desc(proportion))
 proportions_cities # city proportions
 ```
+
+\newpage
 ### Question: 6
 
 Are the distributions of the median sales price (column name median), when grouped by city, different? The same? Show your work.
   
-```{r EDA_Q6.1, warning=FALSE, message=FALSE}
+```{r EDA_Q6.1, warning=FALSE, message=FALSE, fig.align='center'}
 # cities above 500 summarise by volume
 txhousing %>% group_by(sales > 500) 
 
@@ -233,7 +237,7 @@ From the graph above interestingly we can observe that the median price is highe
 
 Any cities that stand out that you’d want to investigate further?  
 
-```{r EDA_Q6.2, warning=FALSE, message=FALSE}
+```{r EDA_Q6.2, warning=FALSE, message=FALSE, fig.align='center'}
 cities_above500_outliers <- txhousing %>% filter(sales > 500)
 ggplot(data = cities_above500, mapping = aes(x = reorder(city,median,mean), y = median)) +
   geom_boxplot() +
@@ -249,9 +253,10 @@ By the above plaot we can conclude that the following cities with lots of outlie
 + Dallas  
 + Houston  
 
+\newpage
 Why might we want to filter out all cities and months with sales less than 500?
 
-```{r EDA_Q6.3, warning=FALSE, message=FALSE}
+```{r EDA_Q6.3, warning=FALSE, message=FALSE, fig.align='center'}
 # Let's take a look at cities below 500 sales
 small_cities <- txhousing %>% filter (sales < 500)
 ggplot(data = small_cities, mapping = aes(x = reorder(city,median,mean), y = median)) +
@@ -260,14 +265,17 @@ ggplot(data = small_cities, mapping = aes(x = reorder(city,median,mean), y = med
   coord_flip() + 
   theme_bw()
 
+```
+
+\newpage
+```{r, fig.align='center'}
 # Let's take a look at cities abvove 500 sales
-large_cities <- txhousing %>% filter (sales < 500)
+large_cities <- txhousing %>% filter (sales > 500)
 ggplot(data = large_cities, mapping = aes(x = reorder(city,median,mean), y = median)) +
   geom_boxplot() +
   labs(x = 'Cities', y = 'Median Sale Price') + 
   coord_flip() + 
   theme_bw()
-
 ```
 
 **Answer:** 
