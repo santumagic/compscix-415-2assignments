@@ -3,16 +3,16 @@ title: \vspace{.5in}"__COMPSCIX 415.2 Homework 6__"
 author: "__Santosh Kanutala__"
 date: "7/13/2018"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -95,8 +95,21 @@ From the above dataset it is observed that untill the age of 44, non-smokers hav
 
 ## <u>Exercise 2</u>
 ### Question: 1
-```{r Ex_2_Q1, message=FALSE, warning=FALSE}
+```{r Ex_2_Q1, message=FALSE, warning=FALSE, fig.align='center'}
+# given sample code
+library(tidyverse)
+n <- 10000
+# look at ?rgamma to read about this function
+gamma_samp <- tibble(x = rgamma(n, shape = 1, scale = 2))
+gamma_samp
+
+# histogram for the above sample gamma
+ggplot(data = gamma_samp) + 
+  geom_histogram(aes(x=x), bins=100) + 
+  theme_bw()
+
 ```
+
 ### Question: 2
 ```{r Ex_2_Q2, message=FALSE, warning=FALSE}
 ```
