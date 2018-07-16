@@ -120,6 +120,19 @@ sprintf ("Standard deviation = %f", sapply(gamma_samp, sd, na.rm = TRUE))
 ```
 ### Question: 3
 ```{r Ex_2_Q3, message=FALSE, warning=FALSE}
+# sample of size n = 30
+sample_30 <- gamma_samp %>% sample_n(30, replace = TRUE) 
+
+# finding mean
+sprintf("Mean = %f", sapply(sample_30, mean, na.rm = TRUE))
+
+# finding standard deviation
+sprintf ("Standard deviation = %f", sapply(sample_30, sd, na.rm = TRUE))
+
+# Plot the histogram
+ggplot(data =sample_30, mapping = aes(x=x)) + 
+  geom_histogram(bins=5) + 
+  theme_bw()
 ```
 ### Question: 4
 ```{r Ex_2_Q4, message=FALSE, warning=FALSE}
