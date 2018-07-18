@@ -3,16 +3,16 @@ title: \vspace{.5in}"__COMPSCIX 415.2 Homework 6__"
 author: "__Santosh Kanutala__"
 date: "7/17/2018"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -215,7 +215,8 @@ ggplot(data = mean_dist_300, mapping = aes(x=mean_sd_tibble_300)) +
 ```
 
 **Answer:**
-Even with the sample size of 300, the distributions of means and sd are looking normally distributed to me. 
+Even with the sample size of 300, the distributions of means and sd are looking normally distributed to me.
+
 
 
 
