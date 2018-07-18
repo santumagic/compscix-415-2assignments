@@ -24,14 +24,20 @@ knitr::opts_chunk$set(echo = TRUE)
 install.packages('rvest')
 library(rvest)
 
-https://www.imdb.com/title/tt0111161/?ref_=fn_al_tt_3
+??rvest
 
 
 s_r <- read_html("https://www.imdb.com/title/tt0111161/?ref_=fn_al_tt_3")
 class(s_r)
-s_r
+s_r %>%
+  html_nodes("#titleCast .itemprop span") %>%
+  html_text()
 ```
 
+```{r}
+install.packages('jsonlite')
+library(jsonlite)
+```
 
 
 
