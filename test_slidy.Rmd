@@ -9,22 +9,22 @@ footer: "Team VDM"
 
 # Integration Items
 
-## Getting up
+## Slide Header
 
-- Feature Matrix
-- Get out of bed
+- Item 1
+- Item 2
 
-## Breakfast
+## Slide Header 2
 
-- Eat eggs
-- Drink coffee
+- Item 3
+- Item 4
 
 # Aug 15 Release Plan
 
-## Release Items and Testing
+## Slide Header 3
 
-- Eat spaghetti
-- Drink wine
+- Item 4
+- Item 5
 
 ---
 
