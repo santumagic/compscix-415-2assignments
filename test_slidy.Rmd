@@ -3,6 +3,7 @@ title: "VDM 2.0 DMP Integration"
 author: Santosh Kanutala
 date: July 22, 2018
 output: slidy_presentation
+  footer: "Team VDM"
 ---
 
 # Integration Items
