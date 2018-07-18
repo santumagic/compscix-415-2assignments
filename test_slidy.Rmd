@@ -9,7 +9,7 @@ output: slidy_presentation
 
 ## Getting up
 
-- Turn off alarm
+- Feature Matrix
 - Get out of bed
 
 ## Breakfast
@@ -19,7 +19,7 @@ output: slidy_presentation
 
 # Aug 15 Release Plan
 
-## Dinner
+## Release Items and Testing
 
 - Eat spaghetti
 - Drink wine
