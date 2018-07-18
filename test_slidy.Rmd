@@ -5,7 +5,7 @@ date: July 22, 2018
 output: slidy_presentation
 ---
 
-# In the morning
+# Integration Items
 
 ## Getting up
 
@@ -17,7 +17,7 @@ output: slidy_presentation
 - Eat eggs
 - Drink coffee
 
-# In the evening
+# Aug 15 Release Plan
 
 ## Dinner
 
