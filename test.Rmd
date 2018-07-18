@@ -1,15 +1,17 @@
 ---
-title: "VDM 2.0 DMP Integration"
-author: Santosh Kanutala
-date: July 22, 2018
-output: beamer_presentation
+title: "Habits"
+author: "John Doe"
+date: "March 22, 2005"
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
 ---
 
-# Integration Items
+# In the morning
 
 ## Getting up
 
-- Feature Matrix
+- Turn off alarm
 - Get out of bed
 
 ## Breakfast
@@ -17,12 +19,13 @@ output: beamer_presentation
 - Eat eggs
 - Drink coffee
 
-# Aug 15 Release Plan
+# In the evening
 
-## Release Items and Testing
+## Dinner
 
 - Eat spaghetti
 - Drink wine
+
 ---
 
 ```{r, cars, fig.cap="A scatterplot.", echo=FALSE}
