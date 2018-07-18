@@ -1,7 +1,7 @@
 ---
 title: \vspace{.5in}"__COMPSCIX 415.2 Homework 6__"
 author: "__Santosh Kanutala__"
-date: "7/13/2018"
+date: "7/17/2018"
 output:
   pdf_document:
     toc: yes
@@ -93,6 +93,7 @@ ggplot() +
 **Answer:**  
 From the above dataset it is observed that untill the age of 44, non-smokers have only a 1% advantage compared to smokers, but this gap increases dramatically between the ages 44 & 64 where 6% more non-smokers are alive than smokers. Beyond 64 year of age, the difference drops to 3% with non-smokers still being alive more often than smokers.
 
+\newpage
 ## <u>Exercise 2</u>
 ### Question: 1
 ```{r Ex_2_Q1, message=FALSE, warning=FALSE, fig.align='center'}
@@ -136,17 +137,87 @@ ggplot(data =sample_30, mapping = aes(x=x)) +
 ```
 
 ### Question: 4
-```{r Ex_2_Q4, message=FALSE, warning=FALSE}
+```{r Ex_2_Q4, message=FALSE, warning=FALSE, fig.align='center'}
+mean_samp <- rep(NA, 10000) 
+
+mean_sd <- rep(NA, 10000)
+for (i in 1:10000) {
+g_samp <- gamma_samp %>% 
+  sample_n(30, replace = TRUE) 
+mean_samp[i] <- mean(g_samp$x)
+mean_sd[i] <- sd(g_samp$x)
+}
+# tibbles for mean_samp and mead_sd
+mean_samp_tibble <- tibble(mean_samp)
+mean_sd_tibble <- tibble(mean_sd)
+mean_dist <- bind_cols(mean_samp_tibble,mean_sd_tibble)
+
+# display the sample of final vector
+head(mean_dist)
 ```
 ### Question: 5
-```{r Ex_2_Q5, message=FALSE, warning=FALSE}
+```{r Ex_2_Q5, message=FALSE, warning=FALSE, fig.align='center'}
+# plot for the means
+ggplot(data = mean_dist, mapping = aes(x=mean_samp_tibble)) + 
+  geom_histogram(bins=100) +
+  theme_bw()
 ```
 ### Question: 6
-```{r Ex_2_Q6, message=FALSE, warning=FALSE}
+```{r Ex_2_Q6, message=FALSE, warning=FALSE, fig.align='center'}
+
+# from the code of Question 4 : below are sample of the standard deviations of the population
+head(mean_sd_tibble)
+
+# plot for the standard deviation
+ggplot(data = mean_dist, mapping = aes(x=mean_sd_tibble)) + 
+  geom_histogram(bins=100) +
+  theme_bw()
 ```
 ### Question: 7
 ```{r Ex_2_Q7, message=FALSE, warning=FALSE}
 ```
+**Answer:**
+Both the mean and sd plots of the population looks normally distributed.
+
 ### Question: 8
 ```{r Ex_2_Q8, message=FALSE, warning=FALSE}
+# Repeat Question 4 with sample size = 300
+mean_samp_300 <- rep(NA, 10000) 
+
+mean_sd_300 <- rep(NA, 10000)
+for (i in 1:10000) {
+g_samp_300 <- gamma_samp %>% 
+  sample_n(300, replace = TRUE) 
+mean_samp_300[i] <- mean(g_samp_300$x)
+mean_sd_300[i] <- sd(g_samp_300$x)
+}
+# tibbles for mean_samp and mead_sd
+mean_samp_tibble_300 <- tibble(mean_samp_300)
+mean_sd_tibble_300 <- tibble(mean_sd_300)
+mean_dist_300 <- bind_cols(mean_samp_tibble_300,mean_sd_tibble_300)
+# display the sample of final vector
+head(mean_dist_300)
+
+# plot for the means_300
+ggplot(data = mean_dist_300, mapping = aes(x=mean_samp_tibble_300)) + 
+  geom_histogram(bins=100) +
+  theme_bw()
+
+# Repeat Question 6 with sample size = 300
+
+# below are sample of the standard deviations of the population
+head(mean_sd_tibble_300)
+
+# plot for the standard deviation
+ggplot(data = mean_dist_300, mapping = aes(x=mean_sd_tibble_300)) + 
+  geom_histogram(bins=100) +
+  theme_bw()
 ```
+
+**Answer:**
+Even with the sample size of 300, the distributions of means and sd are looking normally distributed to me. 
+
+
+
+
+
