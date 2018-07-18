@@ -1,15 +1,15 @@
 ---
-title: "Habits"
-author: John Doe
-date: March 22, 2005
+title: "VDM 2.0 DMP Integration"
+author: Santosh Kanutala
+date: July 22, 2018
 output: ioslides_presentation
 ---
 
-# In the morning
+# Integration Items
 
 ## Getting up
 
-- Turn off alarm
+- Feature Matrix
 - Get out of bed
 
 ## Breakfast
@@ -17,13 +17,12 @@ output: ioslides_presentation
 - Eat eggs
 - Drink coffee
 
-# In the evening
+# Aug 15 Release Plan
 
-## Dinner
+## Release Items and Testing
 
 - Eat spaghetti
 - Drink wine
-
 ---
 
 ```{r, cars, fig.cap="A scatterplot.", echo=FALSE}
