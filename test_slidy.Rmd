@@ -1,38 +1,24 @@
 ---
 title: "VDM 2.0 DMP Integration"
-author: Santosh Kanutala
-date: July 22, 2018
-output: slidy_presentation
-footer: "Team VDM"
- 
+output: 
+  flexdashboard::flex_dashboard:
+    storyboard: false
 ---
 
-# Integration Items
+### Frame 1
 
-## Slide Header
-
-- Item 1
-- Item 2
-
-## Slide Header 2
-
-- Item 3
-- Item 4
-
-# Aug 15 Release Plan
-
-## Slide Header 3
-
-- Item 4
-- Item 5
-
----
-
-```{r, cars, fig.cap="A scatterplot.", echo=FALSE}
-plot(cars)
+```{r}
 ```
 
-## Slide Header 4
+*** 
 
-- Item 5
-- Item 6
+
+
+
+
+```{r}
+```
+
+*** 
+
+
