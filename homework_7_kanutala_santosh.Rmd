@@ -30,10 +30,10 @@ library(tidyverse)
 library(mdsr)
 ```
 ```{r Ex_1_Q1, message=FALSE, warning=FALSE}
-# Load the newly created csv file
-train <- read.csv("/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/baby_nam )
+# Load the train.csv file
+train <- read.csv ("/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/train.csv", sep = "," )
 # glimpse the data from the final csv file
-glimpse(baby_names_csv_final)
+glimpse(train)
 ```
 
 **Answer:**  
