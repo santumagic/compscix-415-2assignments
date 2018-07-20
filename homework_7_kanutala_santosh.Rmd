@@ -19,33 +19,25 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+\newpage
+## <u>Github location</u>
+My homework assignments can be found at   https://github.com/santumagic/compscix-415-2assignments.git
 
-```{r}
-install.packages('rvest')
-library(rvest)
+## <u>Exercise 1</u>
+```{r load_packages, message=FALSE, warning=FALSE}
+# Load the required packages
+library(tidyverse)
+library(mdsr)
+library(mosaicData)
+```
+```{r Ex_1_Q1, message=FALSE, warning=FALSE}
 
-??rvest
-
-
-s_r <- read_html("https://www.imdb.com/title/tt0111161/?ref_=fn_al_tt_3")
-class(s_r)
-s_r %>%
-  html_nodes("#titleCast .itemprop span") %>%
-  html_text()
 ```
 
-```{r}
-install.packages('jsonlite')
-library(jsonlite)
-```
+**Answer:**  
 
+## <u>Exercise 2</u>
 
+## <u>Exercise 3</u>
 
-
-
-
-
-
-
-
-
+## <u>Exercise 4</u>
