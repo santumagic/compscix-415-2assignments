@@ -28,10 +28,12 @@ My homework assignments can be found at   https://github.com/santumagic/compscix
 # Load the required packages
 library(tidyverse)
 library(mdsr)
-library(mosaicData)
 ```
 ```{r Ex_1_Q1, message=FALSE, warning=FALSE}
-
+# Load the newly created csv file
+train <- read.csv("/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/baby_nam )
+# glimpse the data from the final csv file
+glimpse(baby_names_csv_final)
 ```
 
 **Answer:**  
