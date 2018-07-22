@@ -1,18 +1,18 @@
 ---
-title: \vspace{.5in}"__COMPSCIX 415.2 Homework 6__"
+title: \vspace{.5in}"__homework_7_kanutala_santosh__"
 author: "__Santosh Kanutala__"
-date: "7/17/2018"
+date: "7/22/2018"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -29,16 +29,21 @@ My homework assignments can be found at   https://github.com/santumagic/compscix
 library(tidyverse)
 library(mdsr)
 ```
-```{r Ex_1_Q1, message=FALSE, warning=FALSE}
+```{r Ex_1, message=FALSE, warning=FALSE}
 # Load the train.csv file
 train <- read.csv ("/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/train.csv", sep = "," )
 # glimpse the data from the final csv file
 glimpse(train)
 ```
 
-**Answer:**  
+**Answer:**
+There are 81 variables, and 1460 observations
 
 ## <u>Exercise 2</u>
+```{r Ex_2, message=FALSE, warning=FALSE}
+
+```
+
 
 ## <u>Exercise 3</u>
 
