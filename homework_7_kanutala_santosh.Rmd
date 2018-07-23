@@ -1,18 +1,18 @@
 ---
-title: \vspace{.5in}"__homework_7_kanutala_santosh__"
-author: "__Santosh Kanutala__"
+title: "homework_7_kanutala_santosh"
+author: "Santosh Kanutala"
 date: "7/22/2018"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -31,9 +31,9 @@ library(mdsr)
 ```
 ```{r Ex_1, message=FALSE, warning=FALSE}
 # Load the train.csv file
-train <- read.csv ("/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/train.csv", sep = "," )
+homes <- read.csv ("/Users/skanutal/Documents/Santosh/Learning/Berkeley/3. Intro to DS/Assignments/train.csv", sep = "," )
 # glimpse the data from the final csv file
-glimpse(train)
+glimpse(homes)
 ```
 
 **Answer:**
@@ -46,37 +46,90 @@ There are 81 variables, and 1460 observations
 # install.packages("broom") # commented to not to run each time
 library(broom)
 
-# Visualize the distribution of SalePrice
-# Plot the histogram
+# Histogram for the distribution of SalePrice
+ggplot(data = homes) +
+  geom_histogram(mapping = aes(x = SalePrice), binwidth = 10000) + 
+  labs (x = 'Sale Prices of homes', y = 'Count', title = 'Sales price of homes by count') +
+  theme_bw()
+
 # Visualize the covariation between SalePrice and Neighborhood
+ggplot(homes) +
+  geom_point(mapping = aes(x=SalePrice, y = Neighborhood)) + 
+  theme_bw()
+
 # Visualize the covariation between SalePrice and OverallQual
+ggplot(homes) +
+  geom_point(mapping = aes(x=SalePrice, y = OverallQual)) +
+  theme_bw()
 
 ```
 
 
 ## <u>Exercise 3</u>
-```{r Ex_2_Q1, message=FALSE, warning=FALSE, fig.align='center'}
+```{r Ex_3_Q1, message=FALSE, warning=FALSE, fig.align='center'}
 # take a look at the coefficient
-simple <- lm(SalePrice ~ 1, data = train)
-tidy(simple)
+homes_simple <- lm(SalePrice ~ 1, data = homes)
+tidy(homes_simple)
 ```
 
 **Answer:**
 The coefficient is: 180921.2
 
-```{r Ex_2_Q2, message=FALSE, warning=FALSE, fig.align='center'}
+```{r Ex_3_Q2, message=FALSE, warning=FALSE, fig.align='center'}
 # compare the coefficient to the average value of SalePrice
-avg_val <- mean(train$SalePrice)
-avg_val
+homes_avg_val <- mean(homes$SalePrice)
+homes_avg_val
 ```
 
 **Answer:**
 The average value of the sale price from the train data set is equal to the coefficient and is equal to 180921.2
 
-```{r Ex_2_Q3, message=FALSE, warning=FALSE, fig.align='center'}
+```{r Ex_3_Q3, message=FALSE, warning=FALSE, fig.align='center'}
 # take a look at the R-squared
-glance(simple)
+glance(homes_simple)
 ```
 
-
 ## <u>Exercise 4</u>
+```{r Ex_4_Q1, message=FALSE, warning=FALSE, fig.align='center'}
+# take a look at the GrLivArea & OverallQual cooefficients
+homes_lm <- lm(formula = SalePrice ~ GrLivArea + OverallQual + Neighborhood, data = homes)
+tidy(homes_lm)
+summary(homes_lm)
+```
+
+**Answer:**
+Coefficient of GrLivArea = 55.56 & Coefficient of OverallQual = 20951.42. This means that increase in sales price is proportional these cooefficients.
+
+```{r Ex_4_Q2, message=FALSE, warning=FALSE, fig.align='center'}
+# take a look at the NeighborhoodBrkSide coefficient
+```
+**Answer:**
+From the summary of above question, it is noted that coeﬃcient of NeighborhoodBrkSide is -13025.45.  
+For every unit increase in NeighborhoodBrkSide the SalePrice would decrease by 13025.45.
+
+```{r Ex_4_Q3, message=FALSE, warning=FALSE, fig.align='center'}
+# Are the features significant?
+```
+**Answer:**
+Yes the features are significant and linear in nature.
+
+```{r Ex_4_Q4, message=FALSE, warning=FALSE, fig.align='center'}
+# Are the features practically significant?
+```
+**Answer:**
+I think yes, all the listed features are practically significant. But potential home buyer can think of many other situations as well apart from these features.
+
+```{r Ex_4_Q5, message=FALSE, warning=FALSE, fig.align='center'}
+# Are the features practically significant?
+```
+**Answer:**
+With an Adjusted R-squared value of 0.783, the model seams to be a good fit for the given data.
+
+
+
+
+
+
+
+
+
