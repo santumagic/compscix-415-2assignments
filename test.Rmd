@@ -1,0 +1,129 @@
+---
+title: "test"
+author: "Santosh Kanutala"
+date: "7/24/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#options(shiny.fullstacktrace=TRUE) #usefull for the bugs
+#options(shiny.error = browser)     #usefull for the bugs
+library(shiny)
+library(shinydashboard)
+library(leaflet)
+library(jsonlite)
+library(curl) # make the jsonlite suggested dependency explicit
+library(tidyverse)
+```
+
+
+```{r}
+fit_model <- function(samp_size, x_var) {
+  diam_samp <- diamonds %>% sample_n(samp_size) # random sample
+  
+  model_formula <-  paste0('price ~', x_var)
+  
+  diam_samp_lm <- lm(model_formula, data = diam_samp)
+  slopes <- coef(diam_samp_lm)[2] # store the coefficient
+  all_results <- lsit(my_samp = diam_samp, my_mod = diam_samp_lm, slope = slopes)
+  return(all_results)
+  
+}
+
+#all_results
+
+fit_model(100,'carat')
+
+# Pop Quiz : 2
+
+fit_model <- function(samp_size, x_var) {
+  diam_samp <- diamonds %>% sample_n(samp_size) # random sample
+  
+  model_formula <-  paste0('price ~', x_var)
+  
+  diam_samp_lm <- lm(model_formula, data = diam_samp)
+  slopes <- coef(diam_samp_lm)[2] # store the coefficient
+  return(slopes)
+}
+```
+
+
+
+```{r}
+n <- 3
+slopes <- rep(NA, n) # empty vector for saving coefficients
+my_mods <- my_samps <- list() # empty lists for saving models and samples
+for(i in 1:n) {
+  my_result <- fit_model(100, 'carat')
+  my_samps[[i]] <- my_result$my_samp
+  my_mods[[i]] <- my_result$my_mod
+  slope[i] <- my_result$slope
+  # extract the slope and store it in slopes
+  # store the model in my_mods
+  # store the sample in my_samps
+}
+all_results <- tibble(my_samps, my_mods, slopes)
+```
+
+```{r}
+library(mdsr)
+glimpse(CholeraDeaths)
+head(CholeraDeaths)
+library(rgdal)
+??rgdal
+
+library(leaflet)
+leaflet() %>% addTiles()
+
+
+
+library(leaflet)
+leaflet() %>% addTiles()
+
+
+leaflet() %>% 
+  setView(lng = -122.3937, lat = 37.79137, zoom = 14) %>%
+  addTiles()
+
+# geocode uc berkeley extension
+
+install.packages('ggmap')
+library(ggmap)
+
+library(ggmap)
+ucb_ext <- '160 Spear St, San Francisco, CA'
+geocode(ucb_ext)
+
+ucb_geo <- geocode(ucb_ext)
+map <- leaflet() %>%
+  addTiles() %>%
+  addMarkers(lng = ~lon, lat = ~lat, data = ucb_geo)
+map
+
+?geocode
+
+```
+
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
