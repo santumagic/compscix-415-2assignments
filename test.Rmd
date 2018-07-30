@@ -111,11 +111,103 @@ map
 
 ```{r}
 
+library(tidyverse)
+library(mdsr)
+x <- c(1,2,3, 11, 12, 13)
+x
+
+my_df <- data.frame(x)
+my_df
+
+my_tbl <- as_tibble(x)
+my_tbl
+
+mdat <- matrix(x, nrow = 2, ncol = 3, byrow = TRUE)
+mdat
+
+mdat <- matrix(x, nrow = 2, ncol = 3, byrow = FALSE)
+mdat
+
+my_list <- list(a = c(1,2,3), 
+                b = c('a', 'b', 'c'), 
+                c = tibble(x = c(3,2,1), y = c('b', 'd', 'f')))
+my_list
+
+
+names(my_list)
+
+my_list[['a']]
+
+my_list$a
+
+my_list[[1]]
+
+my_lm <- lm(price ~ carat, data = diamonds)
+my_lm
+names(my_lm)
+my_lm[['coefficients']]
+
+-----------
+
+```
+
+
+```{r}
+n <- 1000 # number of samples
+slopes <- rep(NA, n) # empty vector for saving cooefficients
+for (i in 1:n) {
+  diam_samp <- diamonds %>% sample_n(1000) # random sample
+  diam_samp_lm <- lm(price ~ carat, data = diam_samp)
+  slopes[i] <- coef(diam_samp_lm)[2]
+}
+slopes <- as_tibble(slopes)
+slopes
+
+
+```
+
+```{r}
+n <- 1000 #how many samples
+slopes <- rep(NA, n) # empty vector for saving coefficients
+my_mods <- my_samps <- list() # empty lists for saving models and samples
+for(i in 1:n) {
+  diam_samp <- diamonds %>% sample_n(1000) # random sample
+  diam_samp_lm <- lm(price ~ carat, data = diam_samp)
+  slopes[i] <- coef(diam_samp_lm)[2] # store the coefficient
+  my_mods[[i]] <- diam_samp_lm
+  my_samps[[i]] <- diam_samp
+}
+all_results <- tibble(my_samps, my_mods, slopes)
+all_results
 ```
 
 
 
+```{r}
+fit_model <- function(samp_size) {
+  diam_samp <- diamonds %>% sample_n(samp_size) # random sample
+  diam_samp_lm <- lm(price ~ carat, data = diam_samp)
+  slopes <- coef(diam_samp_lm)[2] # store the coefficient
+  return(slopes)
+}
 
+```
+
+
+```{r}
+fit_model(1000)
+```
+
+
+```{r}
+library(mdsr)
+glimpse(CholeraDeaths)
+```
+
+```{r}
+cholera_df <- as.data.frame(CholeraDeaths)
+head(cholera_df)
+```
 
 
 
