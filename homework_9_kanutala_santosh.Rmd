@@ -1,0 +1,74 @@
+---
+title: "homework_9_kanutala_santosh"
+author: "Santosh Kanutala"
+date: "8/05/2018"
+output:
+  html_document:
+    highlight: tango
+    number_sections: no
+    theme: readable
+    toc: yes
+    toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newpage
+## <u>Github location</u>
+My homework assignments can be found at   https://github.com/santumagic/compscix-415-2assignments.git
+
+## <u>Exercise 1</u>
+```{r load_packages, message=FALSE, warning=FALSE}
+# Load the required packages
+library(tidyverse)
+library(ggmap)
+library(leaflet)
+library(mdsr) 
+library(rgdal) 
+library(jsonlite)
+```
+
+
+```{r, actual_code}
+
+samp_a <- rbinom(n = 1, size = 1000, p = ___)
+samp_a
+```
+
+
+
+
+
+
+
+```{r}
+install.packages("odbc")
+
+```
+
+```{r}
+con <- DBI::dbConnect(odbc::odbc(),
+  driver = "MYSQL Driver",
+  database = "DMPVDMDEV_L",
+  UID    = rstudioapi::askForPassword("skanutal"),
+  PWD    = rstudioapi::askForPassword("6212"),
+  host = "localhost",
+  port = 5432)
+```
+
+
+
+
+
+
+
+
+
+
+

@@ -3,16 +3,16 @@ title: "homework_8_kanutala_santosh"
 author: "Santosh Kanutala"
 date: "7/27/2018"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
-    highlight: tango
   html_document:
     highlight: tango
     number_sections: no
     theme: readable
     toc: yes
     toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -27,11 +27,29 @@ My homework assignments can be found at   https://github.com/santumagic/compscix
 ```{r load_packages, message=FALSE, warning=FALSE}
 # Load the required packages
 library(tidyverse)
-library(mdsr)
+library(ggmap)
+library(leaflet)
+library(mdsr) 
+library(rgdal) 
+library(jsonlite)
 ```
 
-```{r Ex_1, message=FALSE, warning=FALSE, fig.align='center'}
+
+```{r, actual_code}
+bike_map <- function(city) {
+url <- paste0("https://api.jcdecaux.com/vls/v1/stations?contract=",city,"&apiKey=a949da92df310a709b1f1c7f791f37dc4b4faf82")
+df_with_api <- fromJSON(url, flatten = TRUE)
+new_avail_bike <- as.character(df_with_api$available_bikes)
+df_with_api <- cbind(df_with_api, new_avail_bike)
+map <- leaflet() %>%
+  addTiles() %>%
+  addMarkers(lng = ~df_with_api$position.lng, lat = ~df_with_api$position.lat, label = ~df_with_api$new_avail_bike, popup = paste("Address: ", df_with_api$address), data = df_with_api)
+map
+}
+
+cities <- c('Luxembourg', 'Dublin', 'Brisbane', 'Seville', 'Stockholm', 'Ljubljana')
+bike_map(cities[1])
+
 ```
 
-**Answer:**
 
